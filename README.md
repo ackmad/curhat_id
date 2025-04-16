@@ -1,61 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💬 Curhat Anonim
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Curhat Anonim** adalah sebuah website yang menyediakan ruang aman bagi siapa pun untuk mencurahkan isi hati, perasaan, dan unek-unek secara **anonim**. Platform ini memungkinkan pengguna untuk menulis curhatan tanpa perlu login atau menyebutkan identitas mereka. Pengguna lain juga bisa memberikan bentuk dukungan atau merasa **relate** dengan curhatan yang ada.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Latar Belakang
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Banyak orang yang merasa kesepian, tidak punya tempat bercerita, atau takut dihakimi saat ingin mengungkapkan isi hatinya. Curhat Anonim hadir sebagai solusi untuk menyediakan wadah curhat tanpa identitas yang **aman, nyaman, dan bikin lega**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Dengan fitur interaksi sederhana seperti **“Gue Dukung!”** dan **“Wah, gue juga!”**, pengguna juga bisa merasa ditemani dan dimengerti oleh orang lain yang merasakan hal serupa.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🎯 Tujuan & Fungsi Website
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Menyediakan ruang curhat anonim tanpa login
+- Mempermudah pengguna menuangkan perasaan tanpa takut dihakimi
+- Menyediakan tampilan yang nyaman dan komunikatif
+- Memberi interaksi sederhana melalui tombol dukungan dan relate
+- Mengumpulkan feedback dari pengguna untuk pengembangan selanjutnya
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🧩 Fitur Utama
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Halaman Beranda dengan penjelasan ringan dan humanis
+- Form Curhat Anonim dengan pilihan kategori
+- Halaman Curhatan Publik yang bisa dilihat semua orang
+- Reaksi sederhana: tombol “Dukung” dan “Relate”
+- Form feedback dari pengunjung
+- Halaman tentang website
+- Tampilan mobile-friendly & simple
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+## 🗃️ Struktur Database & Relasi
 
-## Contributing
+### Tabel `curhat`
+- `id`
+- `judul`
+- `isi`
+- `kategori_id`
+- `created_at`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Tabel `kategori`
+- `id`
+- `nama_kategori`
 
-## Code of Conduct
+### Tabel `reaksi`
+- `id`
+- `curhat_id`
+- `tipe_reaksi` (`dukung` atau `relate`)
+- `created_at`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Tabel `feedback`
+- `id`
+- `isi_feedback`
+- `created_at`
 
-## Security Vulnerabilities
+### Relasi:
+- 1 `curhat` → 1 `kategori`
+- 1 `curhat` → banyak `reaksi`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## ⚙️ Teknologi yang Digunakan
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Laravel 10 (PHP Framework)
+- Blade Template
+- TailwindCSS / Bootstrap
+- Fontawesome / Lucide Icons
+- MySQL / MariaDB
+
+---
+
+## 👨‍💻 Tim Developer
+
+### 👤 Frontend Developer – **[Nama Kamu]**
+- Mendesain UI/UX
+- Mengimplementasikan tampilan halaman (Landing Page, Form Curhat, Curhatan Publik, Tentang Website)
+- Membuat tampilan responsif dan enak dilihat
+- Menyesuaikan bahasa UI agar santai & relevan
+
+### 👨‍💻 Backend Developer – **Aldi**
+- Mendesain dan membuat struktur database
+- Menangani logic backend (form submission, penyimpanan curhat, reaksi, feedback)
+- Menyusun controller, model, dan routing Laravel
+- Validasi dan keamanan input
+
+---
+
+## 🎨 Gaya Bahasa & Desain
+
+- Bahasa santai, tidak kaku, dan relevan dengan anak muda
+- Desain clean, minimalis, warna lembut
+- User experience yang nyaman dan tidak mengintimidasi
+
+### Contoh Bahasa:
+- \"Lagi kepikiran sesuatu? Cerita aja di sini. Nggak ada yang nge-judge.\"\n
+- \"Udah lega? Kirim aja deh!\"\n
+- \"Kamu nggak sendirian kok. Yuk baca cerita dari orang-orang yang mungkin ngerasa hal yang sama.\"
+
+---
+
+## 🤝 Kontribusi
+
+Kalau kamu tertarik ikut bantu mengembangkan, feel free buat fork repo ini dan pull request! Bisa juga kasih saran via fitur feedback di website 😉
+
+---
+
+## 📢 Penutup
+
+> **“Satu cerita bisa bikin hati lega. Satu dukungan bisa bikin hari orang jadi lebih baik.”**
+
+Website ini bukan cuma proyek, tapi semoga bisa jadi tempat pelarian yang bikin hati lebih hangat dan lega.
+
+---
+
+**© 2025 Curhat Anonim**
