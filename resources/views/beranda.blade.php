@@ -3,147 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda || Curhatin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELFAN</title>
+    <link rel="stylesheet" href="{{ asset('css/style_beranda.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 </head>
 <body>
-
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="#">
-      <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<!-- Awal Footer -->
-<footer class="text-center text-white" style="background-color:#7e684b">
-    <!-- Grid container -->
     <div class="container">
-      <!-- Section: Links -->
-      <section class="mt-5">
-        <!-- Grid row-->
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('beranda') }}" class="text-white">Beranda</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('curhat-dulu-yuk') }}" class="text-white">Curhat Dulu Yuk</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('intip-cerita-orang') }}" class="text-white">Intip Cerita Orang</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('kenalin-kami') }}" class="text-white">Kenalin Kami</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('ada-saran') }}" class="text-white">Ada Saran?</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
+        <div id="navbar">
+            <ul>
+                <li><a href="#">Rumah</a></li>
+                <li><a href="#">Curhat Dulu yuk</a></li>
+                <li><a href="#">Intip Cerita Orang</a></li>
+                <li><a href="#">Kenali Kami</a></li>
+                <li><a href="#">Ada Saran?</a></li>
+            </ul>
         </div>
-        <!-- Grid row-->
-      </section>
-      <!-- Section: Links -->
-
-      <hr class="my-5" />
-
-      <!-- Section: Text -->
-      <section class="mb-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <p>
-            Website ini bukan cuma proyek, tapi semoga bisa jadi tempat pelarian yang bikin hati lebih hangat dan lega.
-            </p>
-          </div>
+    </div>
+    <div class="container" style="padding-top: 10%">
+        <h1 class="tagline-home">Tempat Curhat Tanpa Nama</h1>
+        <h1 class="tagline-home" style="font-size: 40px">Tapi Tetap Didengar</h1>
+        <h4>“Curhat itu bukan drama. Itu bagian dari manusia.”</h4>
+        <div class="calltoaction">
+            <a href="#" class="btn-curhat">📝 Curhat Sekarang</a>
+            <a href="#" class="btn-bacaCurhat">📖 Baca Cerita Orang</a>
         </div>
-      </section>
-      <!-- Section: Text -->
-
-      <!-- Section: Social -->
-      <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </section>
-      <!-- Section: Social -->
     </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2025 Curhat Anonim || Elfan & Aldi
-      <br>
-      Website design and development by
-    <a class="text-white" href="https://mdbootstrap.com/"
-         > Cuhatin.id
-      </a>
+    <div class="section-kategori">
+        <div class="left-side">
+            <p>"Nggak semua luka harus terlihat, tapi semuanya layak didengar</p>
+            <div class="kategori-side">
+                <h4>Tampilkan Kategori: </h4>
+                <div class="kategori">
+                    <a href="#" class="btn-kategori">Lagi Urusan Hati</a>
+                    <a href="#" class="btn-kategori">Cerita dari Rumah</a>
+                    <a href="#" class="btn-kategori">Tentang Temen-Temen</a>
+                    <a href="#" class="btn-kategori">Perang Sama Diri Sendiri</a>
+                    <a href="#" class="btn-kategori">Pelan-Pelan, Nggak Apa-Apa</a>
+                    <a href="#" class="btn-kategori">Masa Depan Gimana Ya?</a>
+                    <a href="#" class="btn-kategori">Dompet Lagi Tipis?</a>
+                    <a href="#" class="btn-kategori">Suasana Sekitar Gue</a>
+                    <a href="#" class="btn-kategori">Cerita Hati & Tuhan</a>
+                    <a href="#" class="btn-kategori">Belajar Sayang Diri Sendiri</a>
+                    <a href="#" class="btn-kategori">Campur Aduk Aja deh</a>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div>
+                <img src="{{ asset('images/quotepapper.png') }}" alt="" width="600px">
+            </div>
+        </div>
     </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Akhir Footer -->
+    <div class="container-postByCategory">
+        <div class="postCard-item">
+            <p>22.01.08</p>
+            <div class="content">
+                <h3>Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
+                <p>Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
+            </div>
+            <p>Cinta</p>
+        </div>
+        <div class="postCard-item">
+            <p>22.01.08</p>
+            <div class="content">
+                <h3>Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
+                <p>Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
+            </div>
+            <p>Cinta</p>
+        </div>
+        <div class="postCard-item">
+            <p>22.01.08</p>
+            <div class="content">
+                <h3>Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
+                <p>Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
+            </div>
+            <p>Cinta</p>
+        </div>
+        <div class="postCard-item">
+            <p>22.01.08</p>
+            <div class="content">
+                <h3>Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
+                <p>Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
+            </div>
+            <p>Cinta</p>
+        </div>
+        <div class="postCard-item">
+            <p>22.01.08</p>
+            <div class="content">
+                <h3>Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
+                <p>Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
+            </div>
+            <p>Cinta</p>
+        </div>
+    </div>
+    <div class="footer">
+        <h3>Kita semua pernah ngerasa sendirian, ngerasa nggak didengerin, atau sekadar pengen cerita tanpa takut dihakimi. Di sinilah Curhat.id berdiri — bukan buat sok tau, tapi buat nemenin kamu yang mungkin lagi bingung, sedih, jatuh cinta diam-diam, atau bahkan... gagal move on padahal udah berdoa tiap malam. 😌</h1>
+
+        <p>Curhat.id dibangun dari keresahan—iya, keresahan yang seringnya nggak bisa kita ucapin di dunia nyata. Tapi tenang, di sini kamu bebas. Mau cerita panjang, pendek, acak-acakan, atau typo segudang, kita baca satu per satu (dan diem-diem baper juga kadang 🥹).</p>
+
+        <h5>© 2025 Curhat.id | Made with kopi, coding, dan cerita-cerita larut malam.</h5>
+    </div>
 </body>
 </html>

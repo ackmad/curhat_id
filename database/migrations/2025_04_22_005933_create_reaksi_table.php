@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reaksi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('curhat_id')->constrained('curhat')->onDelete('cascade');
-            $table->enum('tipe_reaksi', ['dukung', 'relate']);
+            $table->string('tipe_reaksi');
             $table->timestamps();
         });
     }
