@@ -4,22 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ELFAN</title>
+    <title>Satu Ruang, Jutaan Cerita | Kamu Gak Sendiri, Ceritamu Berarti</title>
     <link rel="stylesheet" href="{{ asset('css/style_beranda.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div id="navbar">
-            <ul>
-                <li><a href="#">Rumah</a></li>
-                <li><a href="#">Curhat Dulu yuk</a></li>
-                <li><a href="#">Intip Cerita Orang</a></li>
-                <li><a href="#">Kenali Kami</a></li>
-                <li><a href="#">Ada Saran?</a></li>
-            </ul>
-        </div>
-    </div>
+    <x-navbar />
     <div class="container" style="padding-top: 10%">
         <h1 class="tagline-home">Tempat Curhat Tanpa Nama</h1>
         <h1 class="tagline-home" style="font-size: 40px">Tapi Tetap Didengar</h1>

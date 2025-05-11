@@ -1,118 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curhat Yuk || Curhatin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curhat Dulu Yukk</title>
+    <link rel="stylesheet" href="{{ asset('css/style_curhatDulu.css') }}">
 </head>
+
 <body>
-    
-<!-- Awal Footer -->
-<footer class="text-center text-white" style="background-color:#7e684b">
-    <!-- Grid container -->
-    <div class="container">
-      <!-- Section: Links -->
-      <section class="mt-5">
-        <!-- Grid row-->
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('beranda') }}" class="text-white">Beranda</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('curhat-dulu-yuk') }}" class="text-white">Curhat Dulu Yuk</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('intip-cerita-orang') }}" class="text-white">Intip Cerita Orang</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('kenalin-kami') }}" class="text-white">Kenalin Kami</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('ada-saran') }}" class="text-white">Ada Saran?</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
+    <x-navbar />
+    <div class="main-container">
+        <div class="story-section">
+            <h3 class="section-title">Lihat Cerita Kamu:</h3>
+            <div class="story-paper">
+                <h3 id="story-title">Lorem ipsum dolor sit amet.</h3>
+                <p id="story-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eius, omnis tempore similique eligendi consequatur repudiandae minus vitae earum. Voluptate officiis distinctio earum expedita quidem vitae natus, asperiores quasi, explicabo fuga cupiditate et. Temporibus deserunt amet optio aut quae. Vitae tempore cumque fugit ipsum accusantium blanditiis commodi quasi nulla expedita corrupti a architecto obcaecati delectus doloribus perferendis, id ab consequuntur autem quaerat repudiandae. Debitis commodi temporibus velit praesentium error officiis fuga numquam, aspernatur modi beatae itaque aperiam quasi odit rerum, tempora saepe! Enim obcaecati voluptates illum libero quo blanditiis magni labore beatae, perferendis est inventore atque a? Nam, pariatur</p>
+                <img src="{{ asset('images/papper-curhat.png') }}" alt="Story Background" class="story-background">
+            </div>
         </div>
-        <!-- Grid row-->
-      </section>
-      <!-- Section: Links -->
+        <div class="form-section">
+            <div class="form-group">
+                <h3 class="form-title">Judul Curhat Kamu</h3>
+                <input type="text" placeholder="Kasih judul buat curhatanmu..." class="input-title">
+            </div>
+            <div class="form-group">
+                <h3 class="form-title">Isi Curhat Kamu</h3>
+                <textarea class="input-content" cols="30" rows="10"
+                    placeholder="Tulis semua yang kamu rasain di sini..."></textarea>
+            </div>
+            <div class="category-container">
+                <p class="category-title">Kategori</p>
+                <div class="category-options">
+                    <input type="radio" name="category" id="category-love">
+                    <label for="category-love" class="category-label" style="--color: #f7c6ce">❤️ Cinta</label>
 
-      <hr class="my-5" />
+                    <input type="radio" name="category" id="category-family">
+                    <label for="category-family" class="category-label" style="--color: #fde7a1">👨‍👩‍👧 Keluarga</label>
 
-      <!-- Section: Text -->
-      <section class="mb-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <p>
-            Website ini bukan cuma proyek, tapi semoga bisa jadi tempat pelarian yang bikin hati lebih hangat dan lega.
-            </p>
-          </div>
+                    <input type="radio" name="category" id="category-school">
+                    <label for="category-school" class="category-label" style="--color: #cbe4f9">🎓 Sekolah / Kuliah</label>
+
+                    <input type="radio" name="category" id="category-friendship">
+                    <label for="category-friendship" class="category-label" style="--color: #ffd5a4">🤝 Persahabatan</label>
+
+                    <input type="radio" name="category" id="category-self-issues">
+                    <label for="category-self-issues" class="category-label" style="--color: #d8c8f8">🧠 Masalah Diri</label>
+
+                    <input type="radio" name="category" id="category-mental-health">
+                    <label for="category-mental-health" class="category-label" style="--color: #d5f0ee">💭 Kesehatan Mental</label>
+
+                    <input type="radio" name="category" id="category-career">
+                    <label for="category-career" class="category-label" style="--color: #d4f7fa">🎯 Karier</label>
+
+                    <input type="radio" name="category" id="category-finance">
+                    <label for="category-finance" class="category-label" style="--color: #fff4bd">💸 Keuangan</label>
+
+                    <input type="radio" name="category" id="category-social">
+                    <label for="category-social" class="category-label" style="--color: #fad4d4">🌍 Sosial</label>
+
+                    <input type="radio" name="category" id="category-spiritual">
+                    <label for="category-spiritual" class="category-label" style="--color: #e9d9fc">🕊️ Spiritual</label>
+
+                    <input type="radio" name="category" id="category-self-love">
+                    <label for="category-self-love" class="category-label" style="--color: #e0f7d4">🌱 Self-Love</label>
+
+                    <input type="radio" name="category" id="category-random">
+                    <label for="category-random" class="category-label" style="--color: #e4e4e4">🌀 Random</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <h3>Bagaimana perasaanmu saat ini?</h3>
+                <div class="emoji-options">
+                    <input type="radio" name="emoji" id="emoji-happy">
+                    <label for="emoji-happy" class="emoji-label">😊</label>
+
+                    <input type="radio" name="emoji" id="emoji-calm">
+                    <label for="emoji-calm" class="emoji-label">☺️</label>
+
+                    <input type="radio" name="emoji" id="emoji-neutral">
+                    <label for="emoji-neutral" class="emoji-label">😐</label>
+
+                    <input type="radio" name="emoji" id="emoji-relaxed">
+                    <label for="emoji-relaxed" class="emoji-label">😌</label>
+
+                    <input type="radio" name="emoji" id="emoji-sad">
+                    <label for="emoji-sad" class="emoji-label">😩</label>
+
+                    <input type="radio" name="emoji" id="emoji-nervous">
+                    <label for="emoji-nervous" class="emoji-label">😬</label>
+
+                    <input type="radio" name="emoji" id="emoji-shocked">
+                    <label for="emoji-shocked" class="emoji-label">😳</label>
+
+                    <input type="radio" name="emoji" id="emoji-thinking">
+                    <label for="emoji-thinking" class="emoji-label">🤔</label>
+
+                    <input type="radio" name="emoji" id="emoji-love">
+                    <label for="emoji-love" class="emoji-label">🥰</label>
+
+                    <input type="radio" name="emoji" id="emoji-angry">
+                    <label for="emoji-angry" class="emoji-label">😡</label>
+
+                    <input type="radio" name="emoji" id="emoji-scared">
+                    <label for="emoji-scared" class="emoji-label">😱</label>
+                </div>
+            </div>
+            <a href="#" class="submit-button">Kirim Cerita</a>
         </div>
-      </section>
-      <!-- Section: Text -->
-
-      <!-- Section: Social -->
-      <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </section>
-      <!-- Section: Social -->
     </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2025 Curhat Anonim || Elfan & Aldi
-      <br>
-      Website design and development by
-    <a class="text-white" href="https://mdbootstrap.com/"
-         > Cuhatin.id
-      </a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Akhir Footer -->
 </body>
+
 </html>
