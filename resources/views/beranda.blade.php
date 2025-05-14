@@ -15,8 +15,8 @@
         <h1 class="home-tagline small-tagline">Tapi Tetap Didengar</h1>
         <h4 class="home-quote">“Curhat itu bukan drama. Itu bagian dari manusia.”</h4>
         <div class="home-actions">
-            <a href="#" class="btn-curhat">📝 Curhat Sekarang</a>
-            <a href="#" class="btn-read-stories">📖 Baca Cerita Orang</a>
+            <a href="{{ url('curhat-dulu-yuk') }}" class="btn-curhat">📝 Curhat Sekarang</a>
+            <a href="{{ url('intip-cerita-orang') }}" class="btn-read-stories">📖 Baca Cerita Orang</a>
         </div>
     </div>
     <div class="category-section">

@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reaksi', function (Blueprint $table) {
+        Schema::create('saran_tim', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('curhat_id')->constrained('curhat')->onDelete('cascade');
-            $table->string('tipe_reaksi');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reaksi');
+        Schema::dropIfExists('saran_tim');
     }
 };
