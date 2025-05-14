@@ -3,116 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenalin || Curhatin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenali Kami Lebih Dekat</title>
+    <link rel="stylesheet" href="{{ asset('css/style_kenaliKami.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 </head>
 <body>
-   
-<!-- Awal Footer -->
-<footer class="text-center text-white" style="background-color:#7e684b">
-    <!-- Grid container -->
-    <div class="container">
-      <!-- Section: Links -->
-      <section class="mt-5">
-        <!-- Grid row-->
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('beranda') }}" class="text-white">Beranda</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('curhat-dulu-yuk') }}" class="text-white">Curhat Dulu Yuk</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('intip-cerita-orang') }}" class="text-white">Intip Cerita Orang</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('kenalin-kami') }}" class="text-white">Kenalin Kami</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="{{ url('ada-saran') }}" class="text-white">Ada Saran?</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
+    <div class="right-side">
+        <a href="/" class="btn-back"> Kembali ke Beranda</a>
+        <h1 class="title">Tentang Website Kita</h1>
+        <div class="container">
+            <div class="content">
+                <h1 class="title-content">💬 Tentang Website Kita – CURHAT.ID</h1>
+                <p class="text-content">
+                    Halo, selamat datang di CURHAT.ID 👋<br>
+                    Sebuah tempat yang kami bikin khusus buat kamu yang lagi banyak pikiran, atau sekadar pengin cerita tanpa harus mikir, “Nanti orang-orang bilang apa ya?”<br>
+                    Di dunia yang serba cepat ini, kadang kita nggak punya waktu — atau keberanian — buat cerita ke orang lain. Padahal, kepala udah penuh, hati udah sesak, dan overthinking makin merajalela. Nah, di sinilah CURHAT.ID hadir.
+                </p>
+            </div>
+            <div class="content">
+                <h1 class="title-content">😌 Tempat Curhat Bebas, Tanpa Nama, Tanpa Drama</h1>
+                <p class="text-content">
+                CURHAT.ID itu kayak temen yang nggak bakal nyela, nggak bakal nge-judge, dan yang paling penting: nggak nanya balik “siapa yang kamu maksud?” 😂<br>
+                Di sini kamu bebas cerita apa aja. Lagi seneng? Cerita! Lagi sedih? Cerita! Lagi kesel sama hidup tapi nggak tahu kenapa? Cerita aja!<br>
+                Kami percaya bahwa menulis itu bisa jadi cara yang manjur buat ngeluarin unek-unek yang susah diungkapin secara lisan. Lewat kata-kata, kamu bisa lebih jujur — bahkan ke diri sendiri.
+                </p>
+            </div>
+            <div class="content">
+                <h1 class="title-content">🫶 Karena Kadang, Kita Cuma Butuh Didengerin</h1>
+                <p class="text-content">
+                Kami nggak janji bisa kasih solusi. Tapi kami yakin satu hal: cerita kamu layak didengerin.
+                <br>
+                Perasaanmu itu valid. Dan kamu nggak sendirian.<br>
+                Mau curhat tentang sekolah yang bikin pusing, temen yang makin jauh, perasaan yang nggak bisa disampein, atau sekadar keresahan random yang muncul pas lagi ngeliat langit — semuanya boleh.
+                Nggak ada yang remeh di sini. Karena semua rasa itu berharga.<br>
+                </p>
+            </div>
+            <div class="content">
+                <h1 class="title-content">💡 Anonim? Aman Banget!</h1>
+                <p class="text-content">
+                Tenang, kamu nggak perlu masukin nama, email, atau identitas apapun. Cukup tulis, klik kirim, dan lega. Semua tetap anonim. Karena kami paham, kadang kita cuma pengin cerita... tanpa perlu dikenal.
+                </p>
+            </div>
         </div>
-        <!-- Grid row-->
-      </section>
-      <!-- Section: Links -->
-
-      <hr class="my-5" />
-
-      <!-- Section: Text -->
-      <section class="mb-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <p>
-            Website ini bukan cuma proyek, tapi semoga bisa jadi tempat pelarian yang bikin hati lebih hangat dan lega.
+    </div>
+    <div class="left-side">
+        <h1 class="title left">Tentang Pembuat Website</h1>
+        <div class="content">
+            <p class="desc-content">
+                Website ini dibuat oleh dua orang siswa SMK yang juga pernah ngerasa butuh tempat buat cerita. Elfan dan Aldi, dua anak yang hobi ngulik kode sambil ngopi sachet dan muter playlist galau, ngerasa: “Kenapa sih, nggak ada tempat curhat yang simpel, anonim, tapi tetep bikin nyaman?”
             </p>
-          </div>
+            <p class="desc-content">
+                Akhirnya, kami bikin sendiri.
+                Kami bukan profesional. Tapi kami ngerti rasanya butuh tempat cerita. Kami harap, CURHAT.ID bisa jadi tempat itu buat kamu.
+            </p>
+            <h4 class="title-klik">klik salah satu foto, untuk kenali lebih dekat :</h4>
         </div>
-      </section>
-      <!-- Section: Text -->
-
-      <!-- Section: Social -->
-      <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </section>
-      <!-- Section: Social -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2025 Curhat Anonim || Elfan & Aldi
-      <br>
-      Website design and development by
-    <a class="text-white" href="https://mdbootstrap.com/"
-         > Cuhatin.id
-      </a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Akhir Footer -->
+        <div class="container-img">
+            <img src="{{ asset('images/elfan-contoh.png') }}" alt="Elfan" class="img img-elfan">
+            <img src="{{ asset('images/aldi-contoh.png') }}" alt="Aldi" class="img img-aldi">
+        </div>
 </body>
 </html>

@@ -15,4 +15,5 @@ Route::get("curhat-dulu-yuk", [CurhatinController::class, "curhat_dulu_yuk"]);
 Route::get("intip-cerita-orang", [CurhatinController::class, "intip_cerita_orang"]);
 Route::get("kenalin-kami", [CurhatinController::class, "kenalin_kami"]);
 Route::get("ada-saran", [CurhatinController::class, "ada_saran"]);
+Route::get("post-curhat", [CurhatinController::class, "post_curhat"]);
 

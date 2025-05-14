@@ -15,15 +15,15 @@
         <div class="story-section">
             <h3 class="section-title">Lihat Cerita Kamu:</h3>
             <div class="story-paper">
-                <h3 id="story-title">Lorem ipsum dolor sit amet.</h3>
-                <p id="story-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eius, omnis tempore similique eligendi consequatur repudiandae minus vitae earum. Voluptate officiis distinctio earum expedita quidem vitae natus, asperiores quasi, explicabo fuga cupiditate et. Temporibus deserunt amet optio aut quae. Vitae tempore cumque fugit ipsum accusantium blanditiis commodi quasi nulla expedita corrupti a architecto obcaecati delectus doloribus perferendis, id ab consequuntur autem quaerat repudiandae. Debitis commodi temporibus velit praesentium error officiis fuga numquam, aspernatur modi beatae itaque aperiam quasi odit rerum, tempora saepe! Enim obcaecati voluptates illum libero quo blanditiis magni labore beatae, perferendis est inventore atque a? Nam, pariatur</p>
+                <h3 id="story-title">Judul Curhat Kamu</h3>
+                <p id="story-content">Isi Curhat Kamu</p>
                 <img src="{{ asset('images/papper-curhat.png') }}" alt="Story Background" class="story-background">
             </div>
         </div>
         <div class="form-section">
             <div class="form-group">
                 <h3 class="form-title">Judul Curhat Kamu</h3>
-                <input type="text" placeholder="Kasih judul buat curhatanmu..." class="input-title">
+                <input type="text" placeholder="Kasih judulnya singkat ajaa..." class="input-title">
             </div>
             <div class="form-group">
                 <h3 class="form-title">Isi Curhat Kamu</h3>
@@ -111,5 +111,5 @@
         </div>
     </div>
 </body>
-
+<script src="{{ asset('js/typing-papper.js') }}"></script>
 </html>

@@ -26,5 +26,8 @@ class CurhatinController extends Controller
     public function ada_saran(){
         return view("ada_saran");
     }
+    public function post_curhat(){
+        return view("post_curhat");
+    }
     // Penutup Halaman Navbar
 }
