@@ -107,7 +107,6 @@ body{
     cursor: pointer;
     transform: scale(1.10, 1.05) translateY(-18px) rotate(-6deg);
     box-shadow: 0 16px 32px 0 #FFCA6C33;
-    display: block;
 }
 
 .card .info-card{
