@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('saran_programmer', function (Blueprint $table) {
             $table->id();
+            $table->string("nama", 255);
+            $table->int("id_tujuan", 11);
+            $table->foreign("id_tujuan")->references("id")->on("tujuan_saran")->onDelete("cascade");
+            $table->text("pesan");
             $table->timestamps();
         });
     }

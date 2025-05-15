@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('curhat', function (Blueprint $table) {
             $table->id();
+            $table->string("judul", 255);
+            $table->text("isi_curhat");
+            $table->unsignedBigInteger("id_kategori");
+            $table->foreign("id_kategori")->references("id")->on("kategori")->onDelete("cascade");
+            $table->string("emoji", 255);
             $table->timestamps();
-        });
+        });    
     }
 
     /**

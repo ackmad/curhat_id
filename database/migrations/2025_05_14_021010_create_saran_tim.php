@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('saran_tim', function (Blueprint $table) {
             $table->id();
+            $table->string("nama", 255);
+            $table->string("email", 255);
+            $table->string("kategori", 255);
+            $table->text("pesan");
             $table->timestamps();
         });
     }
