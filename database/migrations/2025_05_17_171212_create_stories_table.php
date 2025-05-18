@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('curhat', function (Blueprint $table) {
+        Schema::create('stories', function (Blueprint $table) {
             $table->id();
-            $table->string("judul", 255);
-            $table->text("isi_curhat");
-            $table->unsignedBigInteger("id_kategori");
-            $table->foreign("id_kategori")->references("id")->on("kategori")->onDelete("cascade");
-            $table->string("emoji", 255);
+            $table->string('judul');
+            $table->text('isi');
+            $table->string('kategori'); // hanya string
+            $table->string('mood')->nullable();
             $table->timestamps();
-        });    
+        });
     }
 
     /**
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('curhat');
+        Schema::dropIfExists('stories');
     }
 };

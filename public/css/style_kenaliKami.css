@@ -131,6 +131,7 @@ body {
     padding: 0% 5%;
     padding-top: 3%;
     animation: fadeInLeft 1.2s 0.2s cubic-bezier(.77,0,.18,1) both;
+    position: relative; /* pastikan parent relative */
 }
 
 .left-side .content {
@@ -162,22 +163,35 @@ body {
 }
 
 .container-img{
-    position: relative;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 24px; /* beri jarak bawah jika perlu */
+    z-index: 2;
 }
 
 .img {
-    position: absolute;
-    transform: scale(0.7);
+    position: relative;
+    transform: scale(1);
     transition:
-        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 2),
         box-shadow 0.3s,
         filter 0.3s,
         z-index 0.3s;
     transform-origin: bottom center;
     cursor: pointer;
-    opacity: 0;
+    opacity: 1;
     animation: fadeInImg 1.2s cubic-bezier(.77,0,.18,1) forwards;
     z-index: 1;
+    height: 500px;      /* Atur tinggi sesuai kebutuhan */
+    max-height: 70vh;   /* Supaya responsif di layar besar */
+    width: auto;        /* Penting agar tidak gepeng */
+    max-width: 100%;    /* Supaya tidak melebihi container */
 }
 
 /* Efek hover dan focus pada gambar */
@@ -205,6 +219,36 @@ body {
     transition: filter 0.3s, z-index 0.3s;
 }
 
+.container-img .img-elfan:hover ~ .img-aldi,
+.container-img .img-elfan:focus ~ .img-aldi {
+    filter: blur(4px);
+    z-index: 4;
+    transition: filter 0.3s, z-index 0.3s;
+}
+
+.container-img .img-aldi:hover ~ .img-elfan,
+.container-img .img-aldi:focus ~ .img-elfan {
+    filter: blur(4px);
+    z-index: 4;
+    transition: filter 0.3s, z-index 0.3s;
+}
+
+/* Blur lawan saat salah satu gambar di-hover */
+.container-img:hover .img.img-elfan:not(:hover):not(:focus) {
+    filter: blur(4px);
+    z-index: 4;
+    transition: filter 0.3s, z-index 0.3s;
+}
+.container-img:hover .img.img-aldi:not(:hover):not(:focus) {
+    filter: blur(4px);
+    z-index: 4;
+    transition: filter 0.3s, z-index 0.3s;
+}
+.container-img .img:hover,
+.container-img .img:focus {
+    filter: none !important;
+}
+
 /* Delay animasi agar muncul bergantian */
 .container-img .img-elfan { animation-delay: 2s; }
 .container-img .img-aldi { animation-delay: 2.2s; }
@@ -217,7 +261,7 @@ body {
 
 .img-aldi {
     top: 50px;
-    right: 150px;
+    right: 50px;
 }
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-40px);}
@@ -250,4 +294,111 @@ body {
 @keyframes fadeInImg {
     from { opacity: 0; transform: scale(0.7) rotate(-8deg) translateY(40px);}
     to { opacity: 1; transform: scale(1) rotate(0) translateY(0);}
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1100px) {
+    .right-side, .left-side {
+        width: 100%;
+        height: auto;
+        padding: 40px 4vw 32px 4vw;
+    }
+    body {
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+    }
+    .left-side {
+        margin-top: 0;
+        padding-top: 32px;
+    }
+    .title, .title.left {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 700px) {
+    .right-side, .left-side {
+        width: 100%;
+        min-width: 0;
+        padding: 24px 2vw 24px 2vw;
+        height: auto;
+    }
+    .container {
+        gap: 14px;
+    }
+    .title, .title.left {
+        font-size: 26px;
+        margin-top: 0;
+        margin-bottom: 18px;
+    }
+    .title-content, .title-klik {
+        font-size: 16px;
+    }
+    .text-content, .desc-content {
+        font-size: 13px;
+    }
+    .btn-back {
+        font-size: 15px;
+        padding: 7px 16px 7px 28px;
+        margin-bottom: 18px;
+    }
+    .container-img {
+        position: relative; .img          /* Tetap mengikuti flow dokumen */
+        width: 100%;
+        margin: 24px 0 0 0;
+        padding-bottom: 12px;
+        background: transparent;
+        z-index: 1;
+        display: flex;
+        justify-content: center;    /* Tengah horizontal */
+        align-items: flex-end;      /* Bawah */
+        gap: 0;
+    }
+    .img {
+        position: static;
+        width: 200px;
+        max-width: 400px;
+        height: auto;
+        margin: 0 2vw 0 2vw;       /* Jarak antar gambar */
+        opacity: 1;
+        animation: none;
+        box-shadow: none;
+        display: block;
+    }
+    .img-elfan, .img-aldi {
+        margin-left: 0;
+        top: unset;
+        left: unset;
+        right: unset;
+    }
+
+}
+
+/* --- Tambahan untuk desktop --- */
+@media (min-width: 1101px) {
+    .right-side {
+        overflow-y: auto;
+        height: 100vh;
+    }
+    .left-side {
+        overflow: hidden;
+        height: 100vh;
+    }
+    body {
+        overflow: hidden;
+        height: 100vh;
+    }
+}
+
+/* --- Untuk tablet & mobile, scroll normal --- */
+@media (max-width: 1100px) {
+    .left-side, .right-side {
+        overflow: visible;
+        height: auto;
+    }
+    body {
+        overflow: auto;
+        height: auto;
+    }
 }

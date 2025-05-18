@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 </head>
 <body>
-    <div class="right-side">
+    <div class="right-side" style="padding-top:90px;">
         <a href="/" class="btn-back"> Kembali ke Beranda</a>
         <h1 class="title">Tentang Website Kita</h1>
         <div class="container">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="left-side">
+    <div class="left-side" style="padding-top:90px;">
         <h1 class="title left">Tentang Pembuat Website</h1>
         <div class="content">
             <p class="desc-content">
@@ -60,8 +60,9 @@
             <h4 class="title-klik">klik salah satu foto, untuk kenali lebih dekat :</h4>
         </div>
         <div class="container-img">
-            <img src="{{ asset('images/elfan-contoh.png') }}" alt="Elfan" class="img img-elfan">
-            <img src="{{ asset('images/aldi-contoh.png') }}" alt="Aldi" class="img img-aldi">
+            <img src="{{ asset('images/elfan-contoh.png') }}" class="img img-elfan">
+            <img src="{{ asset('images/aldi-contoh.png') }}" class="img img-aldi">
         </div>
+    </div>
 </body>
 </html>

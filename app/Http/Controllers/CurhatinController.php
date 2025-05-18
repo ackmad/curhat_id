@@ -12,7 +12,8 @@ class CurhatinController extends Controller
     }
 
     public function curhat_dulu_yuk(){
-        return view("curhat_dulu_yuk");
+        // HAPUS atau redirect ke controller yang benar
+        return redirect()->action([StoriesController::class, 'create']);
     }
 
     public function intip_cerita_orang(){

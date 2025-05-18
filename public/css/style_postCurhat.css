@@ -57,3 +57,10 @@ body{
 }
 
 /* Controller Button */
+
+.padd p {
+    margin-bottom: 1em;
+    line-height: 1.7;
+    text-align: justify;
+    text-indent: 2em; /* Tambahkan ini untuk indentasi paragraf */
+}

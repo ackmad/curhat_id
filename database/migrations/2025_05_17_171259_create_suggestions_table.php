@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tujuan_saran', function (Blueprint $table) {
+        Schema::create('suggestions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->string("nama_tujuan");
+            $table->string('nama')->nullable();  // Opsional, jika pengguna ingin mengisi nama
+            $table->string('email')->nullable();  // Opsional, jika ada kontak
+            $table->enum('kategori', ['Kritik', 'Saran']);
+            $table->text('pesan');
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tujuan_saran');
+        Schema::dropIfExists('suggestions');
     }
 };

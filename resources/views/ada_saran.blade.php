@@ -10,7 +10,7 @@
 </head>
 <body>
     <x-navbar />
-    <div class="container">
+    <div class="container" style="padding-top:90px;">
         <div class="content-left">
             <h1 class="title-content">Ada sesuatu yang pengen kamu sampein?</h1>
             <p class="desc-content">Kami percaya, website yang baik itu tumbuh bareng penggunanya. Kalau kamu punya kritik, ide, atau saran biar Curhat.id makin nyaman dan relate, tulis aja di bawah ini ya.</p>

@@ -188,6 +188,8 @@ body {
     overflow: hidden;
     animation: fadeInCard 1.2s cubic-bezier(.77,0,.18,1) both;
     transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+
+    text-decoration: none; color: inherit
 }
 .post-card:hover, .post-card:focus-within {
     transform: scale(1.04) rotate(-1deg);

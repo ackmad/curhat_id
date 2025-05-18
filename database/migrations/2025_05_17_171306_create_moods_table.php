@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('saran_tim', function (Blueprint $table) {
+        Schema::create('moods', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->string("nama", 255);
-            $table->string("email", 255);
-            $table->string("kategori", 255);
-            $table->text("pesan");
+            $table->string('nama_mood');
+            $table->string('emoji')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('saran_tim');
+        Schema::dropIfExists('moods');
     }
 };

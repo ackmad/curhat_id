@@ -19,23 +19,15 @@
             <a href="{{ url('intip-cerita-orang') }}" class="btn-read-stories">📖 Baca Cerita Orang</a>
         </div>
     </div>
-    <div class="category-section">
+    <div class="category-section" style="padding-top:30px;">
         <div class="category-left">
-            <p class="category-quote">"Nggak semua luka harus terlihat, tapi semuanya layak didengar"</p>   
+            <p class="category-quote">"Nggak semua luka harus terlihat, tapi semuanya layak didengar"</p>
             <div class="category-list-container">
                 <h4 class="category-title">Tampilkan Kategori:</h4>
                 <div class="category-list">
-                    <a href="#" class="btn-category">Lagi Urusan Hati</a>
-                    <a href="#" class="btn-category">Cerita dari Rumah</a>
-                    <a href="#" class="btn-category">Tentang Temen-Temen</a>
-                    <a href="#" class="btn-category">Perang Sama Diri Sendiri</a>
-                    <a href="#" class="btn-category">Pelan-Pelan, Nggak Apa-Apa</a>
-                    <a href="#" class="btn-category">Masa Depan Gimana Ya?</a>
-                    <a href="#" class="btn-category">Dompet Lagi Tipis?</a>
-                    <a href="#" class="btn-category">Suasana Sekitar Gue</a>
-                    <a href="#" class="btn-category">Cerita Hati & Tuhan</a>
-                    <a href="#" class="btn-category">Belajar Sayang Diri Sendiri</a>
-                    <a href="#" class="btn-category">Campur Aduk Aja deh</a>
+                    @foreach($kategoriList as $kat)
+                        <a href="{{ route('kategori.filter', $kat) }}" class="btn-category {{ (isset($kategori) && $kategori == $kat) ? 'active' : '' }}">{{ $kat }}</a>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -43,47 +35,19 @@
             <img src="{{ asset('images/quotepapper.png') }}" alt="Quote Background" class="category-image">
         </div>
     </div>
-    <div class="post-container">
-        <div class="post-card">
-            <p class="post-date">22.01.08</p>
-            <div class="post-content">
-                <h3 class="post-title">Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
-                <p class="post-description">Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
-            </div>
-            <p class="post-category">Cinta</p>
-        </div>
-        <div class="post-card">
-            <p class="post-date">22.01.08</p>
-            <div class="post-content">
-                <h3 class="post-title">Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
-                <p class="post-description">Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
-            </div>
-            <p class="post-category">Cinta</p>
-        </div>
-        <div class="post-card">
-            <p class="post-date">22.01.08</p>
-            <div class="post-content">
-                <h3 class="post-title">Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
-                <p class="post-description">Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
-            </div>
-            <p class="post-category">Cinta</p>
-        </div>
-        <div class="post-card">
-            <p class="post-date">22.01.08</p>
-            <div class="post-content">
-                <h3 class="post-title">Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
-                <p class="post-description">Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
-            </div>
-            <p class="post-category">Cinta</p>
-        </div>
-        <div class="post-card">
-            <p class="post-date">22.01.08</p>
-            <div class="post-content">
-                <h3 class="post-title">Ternyata cinta jarak jauh itu nggak sesimpel katanya sabar</h3>
-                <p class="post-description">Kita udah sama-sama tahu ini nggak bakal gampang, tapi akhir-akhir ini aku ngerasa kayak jalan sendiri.</p>
-            </div>
-            <p class="post-category">Cinta</p>
-        </div>
+    <div class="post-container" style="padding-top:30px;">
+        @forelse($stories as $story)
+            <a href="{{ route('cerita.show', $story->id) }}" class="post-card">
+                <p class="post-date">{{ $story->created_at->format('y.m.d') }}</p>
+                <div class="post-content">
+                    <h3 class="post-title">{{ $story->judul }}</h3>
+                    <p class="post-description">{{ \Illuminate\Support\Str::limit(strip_tags($story->isi), 100) }}</p>
+                </div>
+                <p class="post-category">{{ $story->kategori ?? '-' }}</p>
+            </a>
+        @empty
+            <p>Tidak ada cerita untuk kategori ini.</p>
+        @endforelse
     </div>
     <footer class="footer">
         <h3 class="footer-heading">Kita semua pernah ngerasa sendirian, ngerasa nggak didengerin, atau sekadar pengen cerita tanpa takut dihakimi. Di sinilah Curhat.id berdiri — bukan buat sok tau, tapi buat nemenin kamu yang mungkin lagi bingung, sedih, jatuh cinta diam-diam, atau bahkan... gagal move on padahal udah berdoa tiap malam. 😌</h3>
