@@ -11,47 +11,32 @@ const measureDiv = document.getElementById('story-measure');
 let pages = [];
 let currentPage = 0;
 
-// Fungsi membagi isi ke halaman secara custom
-function splitToPagesCustom(text, firstPageWords = 100, nextPageWords = 200) {
+// Fungsi membagi isi ke halaman berdasarkan tinggi
+function splitToPagesByHeight(text, maxHeightPx = 500) {
+    // Pisahkan berdasarkan baris kosong (paragraf)
     const paragraphs = text.split(/\n+/).map(p => p.trim()).filter(Boolean);
-
     let pages = [];
-    let wordLimit = firstPageWords;
-    let isFirstPage = true;
-    let currentWords = 0;
-    let currentPage = [];
+    let currentContent = '';
+    let measureDiv = document.getElementById('story-measure');
+
+    measureDiv.innerHTML = '';
+    // Samakan lebar dengan .story-page (ganti jika perlu)
+    measureDiv.style.width = document.querySelector('.story-page')?.offsetWidth + 'px' || '320px';
 
     for (let i = 0; i < paragraphs.length; i++) {
-        const words = paragraphs[i].split(/\s+/).filter(Boolean);
-        let idx = 0;
-        while (idx < words.length) {
-            let remaining = wordLimit - currentWords;
-            let take = Math.min(remaining, words.length - idx);
-            let paraPart = words.slice(idx, idx + take).join(' ');
+        let paraHtml = `<p style="line-height:25px;margin:0;padding:0;text-indent:1em;text-align:justify;">${paragraphs[i]}</p>`;
+        // Coba tambah paragraf ini
+        measureDiv.innerHTML = currentContent + paraHtml;
 
-            currentPage.push(`<p style="line-height:25px;margin:0;padding:0;text-indent:1em; text-align:justify;">${paraPart}</p>`);
-            currentWords += take;
-            idx += take;
-
-            if (currentWords >= wordLimit) {
-                let content = '';
-                content += currentPage.join('');
-                pages.push(content);
-
-                wordLimit = nextPageWords;
-                isFirstPage = false;
-                currentWords = 0;
-                currentPage = [];
-            }
+        if (measureDiv.offsetHeight > maxHeightPx && currentContent !== '') {
+            // Jika melebihi tinggi, simpan halaman & mulai baru
+            pages.push(currentContent);
+            currentContent = paraHtml;
+        } else {
+            currentContent += paraHtml;
         }
     }
-
-    // Sisa paragraf di halaman terakhir
-    if (currentPage.length > 0) {
-        let content = '';
-        content += currentPage.join('');
-        pages.push(content);
-    }
+    if (currentContent) pages.push(currentContent);
 
     return pages;
 }
@@ -72,7 +57,11 @@ function renderPages() {
 
 // Ganti pemanggilan di updatePages:
 function updatePages() {
-    pages = splitToPagesCustom(inputContent.value, 100, 200); // 100 kata halaman 1, 200 kata halaman 2 dst
+    // Pastikan tinggi sesuai dengan CSS .story-page
+    const storyPage = document.querySelector('.story-page');
+    let maxHeight = 330;
+    if (storyPage) maxHeight = storyPage.offsetHeight || 330;
+    pages = splitToPagesByHeight(inputContent.value, maxHeight);
     if (currentPage >= pages.length) currentPage = pages.length - 1;
     if (currentPage < 0) currentPage = 0;
     renderPages();

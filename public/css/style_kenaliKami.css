@@ -344,7 +344,7 @@ body {
         margin-bottom: 18px;
     }
     .container-img {
-        position: relative; .img          /* Tetap mengikuti flow dokumen */
+        position: relative;
         width: 100%;
         margin: 24px 0 0 0;
         padding-bottom: 12px;
@@ -365,6 +365,7 @@ body {
         animation: none;
         box-shadow: none;
         display: block;
+        /* TIDAK ADA transition di sini! */
     }
     .img-elfan, .img-aldi {
         margin-left: 0;
@@ -373,6 +374,16 @@ body {
         right: unset;
     }
 
+}
+
+@media (min-width: 701px) {
+    .img {
+        transition:
+            transform 0.3s cubic-bezier(0.4, 0, 0.2, 2),
+            box-shadow 0.3s,
+            filter 0.3s,
+            z-index 0.3s;
+    }
 }
 
 /* --- Tambahan untuk desktop --- */

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama')->nullable();  // Opsional, jika pengguna ingin mengisi nama
             $table->string('email')->nullable();  // Opsional, jika ada kontak
-            $table->enum('kategori', ['Kritik', 'Saran']);
+            $table->string('kategori');
             $table->text('pesan');
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class suggestions extends Model
+class Suggestions extends Model
 {
-    //
+    protected $fillable = ['nama', 'email', 'kategori', 'pesan'];
 }

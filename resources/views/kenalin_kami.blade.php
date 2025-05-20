@@ -7,6 +7,7 @@
     <title>Kenali Kami Lebih Dekat</title>
     <link rel="stylesheet" href="{{ asset('css/style_kenaliKami.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <x-favicon />
 </head>
 <body>
     <div class="right-side" style="padding-top:90px;">
@@ -60,9 +61,29 @@
             <h4 class="title-klik">klik salah satu foto, untuk kenali lebih dekat :</h4>
         </div>
         <div class="container-img">
-            <img src="{{ asset('images/elfan-contoh.png') }}" class="img img-elfan">
-            <img src="{{ asset('images/aldi-contoh.png') }}" class="img img-aldi">
+            <img src="{{ asset('images/aldi.png') }}" class="img img-elfan">
+            <img src="{{ asset('images/elfan.png') }}" class="img img-aldi">
         </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const elfanImg = document.querySelector('.img-elfan');
+        if (elfanImg) {
+            elfanImg.style.cursor = 'pointer';
+            elfanImg.addEventListener('click', function() {
+                window.location.href = "{{ url('/aldi') }}";
+            });
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const aldiImg = document.querySelector('.img-aldi');
+        if (aldiImg) {
+            aldiImg.style.cursor = 'pointer';
+            aldiImg.addEventListener('click', function() {
+                window.location.href = "{{ url('/elfan') }}";
+            });
+        }
+    });
+    </script>
 </body>
 </html>

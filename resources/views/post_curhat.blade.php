@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Curhatan | {{ $story->judul }}</title>
     <link rel="stylesheet" href="{{ asset('css/style_flipbook.css') }}">
+    <x-favicon />
 </head>
 <body>
     <x-navbar />

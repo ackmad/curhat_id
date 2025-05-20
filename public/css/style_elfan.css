@@ -1,0 +1,260 @@
+/* Reset & Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #e3f6d6;
+    color: #222;
+    overflow-y: hidden;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 32px 24px;
+    gap: 0;
+    overflow: hidden; /* ubah dari overflow-y: hidden ke overflow: hidden */
+}
+
+/* Left-side scrollable */
+#left-side {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 32px 24px 32px 0;
+    overflow-y: auto;      /* ubah dari visible ke auto agar bisa scroll */
+    max-height: 100vh;     /* pastikan tingginya tidak melebihi viewport */
+}
+
+/* Right-side image sticky bottom, no scroll on right */
+#right-side {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    height: 100vh;
+    max-height: 100vh;
+    background: transparent;
+    padding-right: 0;
+}
+
+#right-side img {
+    position: fixed;      /* Ubah ke fixed agar selalu nempel kanan bawah */
+    right: 0;
+    bottom: 0;
+    height: 80vh;        /* Selalu penuh tinggi layar */
+    width: auto;
+    max-width: none;
+    border-radius: 0 0 80px 0;
+    margin: 0;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Kembali link */
+#left-side a[href=""] {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+#left-side a[href=""]:before {
+    content: "← ";
+    font-size: 1.1em;
+}
+
+/* Nama */
+.section-name {
+    margin-bottom: 24px;
+}
+
+.text-name {
+    font-family: 'MagicRetro', 'Poppins', cursive, sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #3F4C3F;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.section-name p {
+    margin: 0;
+    display: flex;
+    gap: 12px;
+}
+
+.text-task {
+    background: #f7c8e0;
+    color: #222;
+    border-radius: 16px;
+    padding: 6px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border: none;
+    display: inline-block;
+}
+
+.text-task:last-child {
+    background: #f7e0c8;
+}
+
+/* Tentang */
+.section-tentang {
+    margin-bottom: 32px;
+}
+
+.text-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.text-about p {
+    margin: 0 0 12px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Relaway', sans-serif;
+}
+
+/* Stalking */
+.section-stalking {
+    margin-top: 32px;
+}
+
+.section-stalking a {
+    display: inline-block;
+    margin-right: 16px;
+    font-size: 1.5rem;
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.section-stalking a:hover {
+    color: #6c63ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        padding: 24px 4vw;
+        min-height: auto;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+    #left-side, #right-side {
+        padding: 0;
+        max-height: none;
+        height: auto;
+        overflow: visible;
+    }
+    #right-side {
+        align-items: flex-end;
+        justify-content: flex-end; /* Tetap tempel kanan */
+        min-height: 0;
+        height: auto;
+        max-height: none;
+        margin-top: 32px;
+        padding-right: 0;
+        position: relative;
+        overflow: visible;
+    }
+    #right-side img {
+        position: static;
+        width: 100vw;
+        max-width: 100vw;
+        height: auto;
+        border-radius: 0 0 60px 0;
+    }
+    body {
+        overflow-y: auto !important; /* Enable scroll on body */
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding: 12px 2vw;
+        min-height: auto;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+    #left-side {
+        padding: 0;
+        max-height: none;
+        overflow: visible;
+    }
+    #right-side {
+        margin-top: 16px;
+    }
+    #right-side img {
+        border-radius: 0 0 32px 0;
+    }
+    .btn-back {
+        font-size: 1.3rem;
+        padding: 14px 18px;
+        border-radius: 22px;
+    }
+    .text-name {
+        font-size: 2.1rem;
+    }
+}
+
+/* Optional: Custom scrollbar for better look */
+body::-webkit-scrollbar {
+    width: 8px;
+    background: #e3f6d6;
+}
+body::-webkit-scrollbar-thumb {
+    background: #b2d8b2;
+    border-radius: 8px;
+}
+
+/* Back Button */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 18px 36px;
+    background: #d6e7cb;
+    color: #222;
+    border: none;
+    border-radius: 32px;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+.btn-back:hover, .btn-back:focus {
+    background: linear-gradient(90deg, #ffd180 80%, #ffe7b3 100%);
+    color: #222;
+}
+
+/* Judul dan isi */
+.text-title, .section-tentang, .text-about p, .section-stalking, .text-task {
+    font-family: 'Poppins', Arial, sans-serif;
+}

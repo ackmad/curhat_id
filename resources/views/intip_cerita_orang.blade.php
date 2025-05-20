@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Intip Cerita Orang Ahhh</title>
     <link rel="stylesheet" href="{{ asset('css/style_intipCerita.css') }}">
+    <x-favicon />
 </head>
 
 <body>

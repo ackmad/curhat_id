@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const pesan = document.getElementById('wa-pesan').value.trim();
 
         let nomor = '';
-        if (tujuan === 'elfan') nomor = '6281234567890'; // ganti dengan nomor Elfan
-        if (tujuan === 'aldi') nomor = '6289876543210'; // ganti dengan nomor Aldi
+        if (tujuan === 'elfan') nomor = '6288999192392'; // ganti dengan nomor Elfan
+        if (tujuan === 'aldi') nomor = '62881023171046'; // ganti dengan nomor Aldi
 
         if (!nama || !pesan) {
             alert('Nama dan pesan wajib diisi!');

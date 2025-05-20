@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Curhat Dulu Yukk</title>
     <link rel="stylesheet" href="{{ asset('css/style_curhatDulu.css') }}">
+    <x-favicon />
 </head>
 
 <body>

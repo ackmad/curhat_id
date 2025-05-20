@@ -93,7 +93,11 @@ body {
 }
 
 .story-page {
-    display: none;
+    width: 320px;      /* atau sesuai kebutuhan */
+    height: 500px;     /* pastikan sama dengan maxHeightPx di JS */
+    overflow: hidden;  /* cegah overflow */
+    margin: 0 auto;
+    position: relative;
 }
 
 .story-page.active {
