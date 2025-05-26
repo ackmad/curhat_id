@@ -290,6 +290,156 @@ input[type="radio"]:checked + .emoji-label {
     transition: box-shadow 0.3s, outline 0.3s;
 }
 
+/* --- POPUP MODAL SUKSES CURHAT --- */
+body.modal-open > *:not(#success-modal) {
+    filter: blur(6px) brightness(0.8);
+    pointer-events: none;
+    user-select: none;
+}
+.modal-success {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.25);
+    display: flex; align-items: center; justify-content: center;
+    animation: fadeInModal 0.4s;
+}
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background: #fff;
+    border-radius: 18px;
+    padding: 36px 28px 28px 28px;
+    text-align: center;
+    box-shadow: 0 8px 32px #0002;
+    min-width: 320px;
+    max-width: 90vw;
+    animation: fadeInScale 0.5s;
+}
+.modal-content h2 {
+    margin-bottom: 14px;
+    color: #3F4C3F;
+    font-size: 1.5rem;
+}
+.modal-content p {
+    color: #3F4C3F;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+}
+.modal-actions {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.modal-btn {
+    background: #C6DEBF;
+    color: #3F4C3F;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(63,76,63,0.08);
+    cursor: pointer;
+}
+.modal-btn.btn-primary {
+    background: #3F4C3F;
+    color: #fff;
+}
+.modal-btn:hover, .modal-btn:focus {
+    background: #FFCA6C;
+    color: #3F4C3F;
+    box-shadow: 0 8px 24px 0 rgba(255,202,108,0.18);
+}
+
+/* --- POPUP SUKSES CURHAT --- */
+.alert-blur-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(200,220,200,0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: opacity 0.4s cubic-bezier(.77,0,.18,1);
+    opacity: 1;
+    pointer-events: auto;
+    animation: blurFadeIn 0.6s cubic-bezier(.77,0,.18,1);
+}
+@keyframes blurFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.alert-success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(90deg, #d9f99d 80%, #b9f3e3 100%);
+    color: #222;
+    padding: 22px 56px 22px 32px;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(63,76,63,0.13), 0 2px 8px 0 #b2d8b2;
+    font-family: 'McLaren', 'Poppins', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    animation: popupFadeIn 0.8s cubic-bezier(.77,0,.18,1);
+    border: 2.5px solid #9acd8a;
+    min-width: 260px;
+    max-width: 90vw;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.alert-success-popup:hover {
+    box-shadow: 0 12px 40px 0 #ffca6c55, 0 2px 8px 0 #b2d8b2;
+    transform: translate(-50%,-50%) scale(1.04) rotate(-1.5deg);
+}
+.alert-success-close {
+    background: #ffca6c;
+    color: #3F4C3F;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px 0 #ffca6c33;
+}
+.alert-success-close:hover {
+    background: #f7c8e0;
+    color: #d72660;
+    transform: scale(1.15) rotate(10deg);
+}
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(0.8) rotate(-8deg);
+        filter: blur(2px);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1.05) rotate(2deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1) rotate(0);
+        filter: blur(0);
+    }
+}
+
 /* --- KEYFRAMES ANIMASI BERBEDA --- */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-40px);}

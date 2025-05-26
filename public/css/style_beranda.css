@@ -21,20 +21,20 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 10% 10%;
-    animation: fadeInDown 1.2s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInDown 1.2s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .home-tagline {
     font-family: 'MagicRetro', sans-serif;
     font-size: 70px;
     color: #3F4C3F;
-    animation: fadeInLeft 1.2s 0.3s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInLeft 1.2s 0.3s cubic-bezier(.77, 0, .18, 1) both;
     letter-spacing: 2px;
 }
 
 .home-tagline.small-tagline {
     font-size: 40px;
-    animation: fadeInRight 1.2s 0.6s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInRight 1.2s 0.6s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .home-quote {
@@ -42,14 +42,14 @@ body {
     font-size: 18px;
     color: #3F4C3F;
     font-style: italic;
-    animation: fadeInUp 1.2s 0.9s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInUp 1.2s 0.9s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .home-actions {
     display: flex;
     gap: 20px;
     margin-top: 40px;
-    animation: fadeInScale 1.2s 1.2s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInScale 1.2s 1.2s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .btn-curhat,
@@ -58,9 +58,9 @@ body {
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: all 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+    transition: all 0.3s cubic-bezier(.77, 0, .18, 1), box-shadow 0.3s;
     cursor: pointer;
-    box-shadow: 0 2px 8px 0 rgba(63,76,63,0.08);
+    box-shadow: 0 2px 8px 0 rgba(63, 76, 63, 0.08);
     outline: none;
     position: relative;
     z-index: 1;
@@ -71,28 +71,32 @@ body {
     color: #fff;
     border: 2px solid #3F4C3F;
 }
+
 .btn-read-stories {
     color: #3F4C3F;
     border: 2px solid #3F4C3F;
     background: #fff;
 }
 
-.read-more{
+.read-more {
     text-decoration: none;
     color: #3f4c3f;
 }
 
 /* --- ANIMASI HOVER & FOCUS BUTTON --- */
-.btn-curhat:hover, .btn-curhat:focus {
+.btn-curhat:hover,
+.btn-curhat:focus {
     background: linear-gradient(90deg, #3F4C3F 60%, #FFCA6C 100%);
     /* color: #3F4C3F; */
-    box-shadow: 0 8px 24px 0 rgba(255,202,108,0.25);
+    box-shadow: 0 8px 24px 0 rgba(255, 202, 108, 0.25);
     transform: scale(1.08) rotate(-2deg);
 }
-.btn-read-stories:hover, .btn-read-stories:focus {
+
+.btn-read-stories:hover,
+.btn-read-stories:focus {
     background: linear-gradient(90deg, #FFCA6C 60%, #C6DEBF 100%);
     color: #3F4C3F;
-    box-shadow: 0 8px 24px 0 rgba(198,222,191,0.25);
+    box-shadow: 0 8px 24px 0 rgba(198, 222, 191, 0.25);
     border-color: #FFCA6C;
     transform: scale(1.08) rotate(2deg);
 }
@@ -103,7 +107,7 @@ body {
     justify-content: space-between;
     padding: 0 10%;
     margin-top: 100px;
-    animation: fadeInFlip 1.2s 1.5s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInFlip 1.2s 1.5s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .category-left {
@@ -113,7 +117,7 @@ body {
 .category-quote {
     font-size: 18px;
     color: #3F4C3F;
-    animation: fadeInLeft 1.2s 1.7s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInLeft 1.2s 1.7s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .category-list-container {
@@ -124,7 +128,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #3F4C3F;
-    animation: fadeInRight 1.2s 1.9s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInRight 1.2s 1.9s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .category-list {
@@ -132,7 +136,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
-    animation: fadeInUp 1.2s 2.1s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInUp 1.2s 2.1s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .btn-category {
@@ -147,7 +151,7 @@ body {
     margin: 8px 10px 8px 0;
     cursor: pointer;
     transition: all 0.25s, color 0.25s, box-shadow 0.25s, border 0.25s;
-    box-shadow: 0 2px 8px 0 rgba(63,76,63,0.06);
+    box-shadow: 0 2px 8px 0 rgba(63, 76, 63, 0.06);
     text-decoration: none;
     display: inline-block;
 }
@@ -170,7 +174,7 @@ body {
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
-    animation: fadeInScale 1.2s 2.3s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInScale 1.2s 2.3s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 /* --- POST CARD --- */
@@ -181,7 +185,7 @@ body {
     justify-content: center;
     padding: 0 10%;
     margin-top: 50px;
-    animation: fadeInUp 1.2s 2.6s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInUp 1.2s 2.6s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .post-card {
@@ -196,14 +200,17 @@ body {
     gap: 10px;
     position: relative;
     overflow: hidden;
-    animation: fadeInCard 1.2s cubic-bezier(.77,0,.18,1) both;
-    transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+    animation: fadeInCard 1.2s cubic-bezier(.77, 0, .18, 1) both;
+    transition: transform 0.3s cubic-bezier(.77, 0, .18, 1), box-shadow 0.3s;
 
-    text-decoration: none; color: inherit
+    text-decoration: none;
+    color: inherit
 }
-.post-card:hover, .post-card:focus-within {
+
+.post-card:hover,
+.post-card:focus-within {
     transform: scale(1.04) rotate(-1deg);
-    box-shadow: 0 12px 32px 0 rgba(66,104,137,0.18);
+    box-shadow: 0 12px 32px 0 rgba(66, 104, 137, 0.18);
     border-color: #FFCA6C;
     background: linear-gradient(120deg, #CDE8FF 80%, #FFCA6C 100%);
 }
@@ -211,7 +218,7 @@ body {
 .post-date {
     font-size: 14px;
     color: #426889;
-    animation: fadeInLeft 1.2s 0.2s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInLeft 1.2s 0.2s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .post-content {
@@ -223,23 +230,77 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #3F4C3F;
-    animation: fadeInRight 1.2s 0.4s cubic-bezier(.77,0,.18,1) both;
-    text-align: center; /* Tambahkan ini agar judul rata tengah */
+    animation: fadeInRight 1.2s 0.4s cubic-bezier(.77, 0, .18, 1) both;
+    text-align: center;
+    /* Tambahkan ini agar judul rata tengah */
 }
 
 .post-description {
     font-size: 14px;
     color: #3F4C3F;
     margin-top: 10px;
-    animation: fadeInUp 1.2s 0.6s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInUp 1.2s 0.6s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 .post-category {
     margin-top: 10px;
     font-size: 14px;
     color: #426889;
-    animation: fadeInScale 1.2s 0.8s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInScale 1.2s 0.8s cubic-bezier(.77, 0, .18, 1) both;
 }
+
+.modal-success {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px #0002;
+    min-width: 300px;
+}
+
+.modal-content h2 {
+    margin-bottom: 12px;
+    color: #3F4C3F;
+}
+
+.modal-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.modal-btn {
+    background: #C6DEBF;
+    color: #3F4C3F;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.modal-btn.btn-primary {
+    background: #3F4C3F;
+    color: #fff;
+}
+
+.modal-btn:hover {
+    background: #FFCA6C;
+    color: #3F4C3F;
+}
+
 
 /* --- FOOTER --- */
 .footer {
@@ -247,60 +308,126 @@ body {
     padding: 50px 10%;
     text-align: center;
     margin-top: 50px;
-    animation: fadeInFooter 1.2s 3s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInFooter 1.2s 3s cubic-bezier(.77, 0, .18, 1) both;
     border-radius: 20px 20px 0 0;
-    box-shadow: 0 8px 32px 0 rgba(230,208,255,0.10);
+    box-shadow: 0 8px 32px 0 rgba(230, 208, 255, 0.10);
 }
+
 .footer-heading {
     font-size: 20px;
     color: #3F4C3F;
-    animation: fadeInLeft 1.2s 0.2s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInLeft 1.2s 0.2s cubic-bezier(.77, 0, .18, 1) both;
 }
+
 .footer-description {
     font-size: 16px;
     color: #3F4C3F;
     margin-top: 20px;
-    animation: fadeInRight 1.2s 0.4s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInRight 1.2s 0.4s cubic-bezier(.77, 0, .18, 1) both;
 }
+
 .footer-copyright {
     font-size: 14px;
     color: #3F4C3F;
     margin-top: 20px;
-    animation: fadeInUp 1.2s 0.6s cubic-bezier(.77,0,.18,1) both;
+    animation: fadeInUp 1.2s 0.6s cubic-bezier(.77, 0, .18, 1) both;
 }
 
 /* --- KEYFRAMES ANIMASI BERBEDA --- */
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-40px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px);}
-    to { opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-60px);}
-    to { opacity: 1; transform: translateX(0);}
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
 @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(60px);}
-    to { opacity: 1; transform: translateX(0);}
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
 @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.8);}
-    to { opacity: 1; transform: scale(1);}
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
 @keyframes fadeInFlip {
-    from { opacity: 0; transform: rotateY(60deg) scale(0.8);}
-    to { opacity: 1; transform: rotateY(0) scale(1);}
+    from {
+        opacity: 0;
+        transform: rotateY(60deg) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(0) scale(1);
+    }
 }
+
 @keyframes fadeInCard {
-    from { opacity: 0; transform: scale(0.7) rotate(-8deg);}
-    to { opacity: 1; transform: scale(1) rotate(0);}
+    from {
+        opacity: 0;
+        transform: scale(0.7) rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
 }
+
 @keyframes fadeInFooter {
-    from { opacity: 0; transform: translateY(60px) scale(0.9);}
-    to { opacity: 1; transform: translateY(0) scale(1);}
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* --- RESPONSIVE: Tetap gunakan media query Anda yang sudah ada --- */

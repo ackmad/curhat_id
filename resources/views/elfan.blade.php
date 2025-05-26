@@ -15,13 +15,15 @@
             <a href="kenalin-kami" class="btn-back">Kembali</a>
             <div class="section-name">
                 <h1 class="text-name">Ackmad Elfan Purnama</h1>
-                <p>
+                <div class="section-skill">
+                    <div class="skill-list">
                     <span class="text-task">Chief Tech Innovator</span>
                     <span class="text-task">Web Development Maestro</span>
                     <span class="text-task">Backend & Frontend Architect</span>
                     <span class="text-task">Full Stack Engineer</span>
                     <span class="text-task">Feature Flow Guardian</span>
-                </p>
+                    </div>
+                </div>
             </div>
             <div class="section-tentang">
                 <h1 class="text-title">Kepo Tentang saya ?</h1>

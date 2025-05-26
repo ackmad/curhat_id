@@ -153,6 +153,52 @@ body {
     color: #6c63ff;
 }
 
+/* Skill Section */
+.section-skill {
+    margin-bottom: 24px;
+}
+
+.skill-list {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.skill-chip {
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    background: #f7e0c8;
+    color: #222;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: none;
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+}
+
+.skill-chip.pink {
+    background: #f7c8e0;
+    color: #222;
+}
+.skill-chip.red {
+    background: #ffd180;
+    color: #222;
+}
+.skill-chip.purple {
+    background: #d1c4e9;
+    color: #222;
+}
+
+.skill-chip:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 4px 18px 0 #ffca6c33;
+}
+
 /* Responsive Styles */
 @media (max-width: 900px) {
     .container {

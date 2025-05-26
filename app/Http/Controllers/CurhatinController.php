@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stories;
 use Illuminate\Http\Request;
 
 class CurhatinController extends Controller
@@ -12,8 +13,7 @@ class CurhatinController extends Controller
     }
 
     public function curhat_dulu_yuk(){
-        // HAPUS atau redirect ke controller yang benar
-        return redirect()->action([StoriesController::class, 'create']);
+        return view("curhat_dulu_yuk");
     }
 
     public function intip_cerita_orang(){
@@ -27,8 +27,23 @@ class CurhatinController extends Controller
     public function ada_saran(){
         return view("ada_saran");
     }
+
     public function post_curhat(){
         return view("post_curhat");
+    }
+
+    public function store(Request $request)
+    {
+        $curhat = Stories::create([
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+            'kategori' => $request->kategori,
+            'mood' => $request->mood,
+        ]);
+        return redirect()->back()->with([
+            'curhat_success' => true,
+            'curhat_id' => $curhat->id
+        ]);
     }
     // Penutup Halaman Navbar
 }

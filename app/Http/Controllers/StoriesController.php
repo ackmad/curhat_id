@@ -45,14 +45,18 @@ class StoriesController extends Controller
         $isi = trim($request->isi);
         $isi = '<p>' . preg_replace('/\r\n|\r|\n/', '</p><br><p>', e($isi)) . '</p><br>';
 
-        Stories::create([
+        $curhat = Stories::create([
             'judul' => $request->judul,
             'isi' => $isi,
             'kategori' => $request->kategori,
             'mood' => $request->mood,
         ]);
 
-        return redirect()->route('beranda')->with('success', 'Cerita berhasil dikirim!');
+        // Redirect ke halaman curhat-dulu-yuk dengan session flash yang sesuai
+        return redirect()->route('curhat-dulu-yuk')->with([
+            'curhat_success' => true,
+            'curhat_id' => $curhat->id
+        ]);
     }
 
     public function intipCeritaOrang()

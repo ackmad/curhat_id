@@ -12,6 +12,42 @@
 
 <body>
     <x-navbar />
+
+    {{-- POPUP MODAL SUKSES --}}
+    @if(session('curhat_success') && session('curhat_id'))
+        <div class="alert-blur-overlay" id="alertBlurOverlay"></div>
+        <div class="alert-success-popup" id="alertSuccessPopup">
+            <span class="alert-success-message">
+                Curhatanmu sudah terkirim dan dapat dilihat orang lain.<br>
+                <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;">
+                    <a href="{{ url('cerita/' . session('curhat_id')) }}" class="modal-btn btn-primary" style="font-size:1rem;">Lihat Cerita Saya</a>
+                    <a href="{{ url('intip-cerita-orang') }}" class="modal-btn" style="font-size:1rem;">Baca Cerita Orang</a>
+                </div>
+            </span>
+            <button class="alert-success-close" id="alertSuccessClose">&times;</button>
+        </div>
+        <script>
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeBtn = document.getElementById('alertSuccessClose');
+            const popup = document.getElementById('alertSuccessPopup');
+            const blur = document.getElementById('alertBlurOverlay');
+            function closePopup() {
+                popup.style.display = 'none';
+                blur.style.opacity = 0;
+                blur.style.pointerEvents = 'none';
+                document.body.style.overflow = '';
+                setTimeout(() => blur && blur.remove(), 400);
+            }
+            if (closeBtn && popup && blur) {
+                closeBtn.onclick = closePopup;
+                blur.onclick = closePopup;
+            }
+            setTimeout(closePopup, 5000);
+        });
+        </script>
+    @endif
+
     <div class="main-container" style="padding-top:90px;">
         <div class="story-section">
             <h3 class="section-title">Lihat Cerita Kamu:</h3>
@@ -143,7 +179,8 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('js/typing-papper.js') }}"></script>
+
 </body>
-<script src="{{ asset('js/typing-papper.js') }}"></script>
 
 </html>
