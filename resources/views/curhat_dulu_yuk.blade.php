@@ -26,26 +26,7 @@
             </span>
             <button class="alert-success-close" id="alertSuccessClose">&times;</button>
         </div>
-        <script>
-        document.body.style.overflow = 'hidden';
-        document.addEventListener('DOMContentLoaded', function() {
-            const closeBtn = document.getElementById('alertSuccessClose');
-            const popup = document.getElementById('alertSuccessPopup');
-            const blur = document.getElementById('alertBlurOverlay');
-            function closePopup() {
-                popup.style.display = 'none';
-                blur.style.opacity = 0;
-                blur.style.pointerEvents = 'none';
-                document.body.style.overflow = '';
-                setTimeout(() => blur && blur.remove(), 400);
-            }
-            if (closeBtn && popup && blur) {
-                closeBtn.onclick = closePopup;
-                blur.onclick = closePopup;
-            }
-            setTimeout(closePopup, 5000);
-        });
-        </script>
+        <script src="{{ asset('js/curhat_dulu.js') }}"></script>
     @endif
 
     <div class="main-container" style="padding-top:90px;">
@@ -179,8 +160,10 @@
             </form>
         </div>
     </div>
-    <script src="{{ asset('js/typing-papper.js') }}"></script>
 
+     <!-- script -->
+    <script src="{{ asset('curhat_dulu_yuk/js/typing-papper.js') }}"></script>
+    <script src="{{ asset('curhat_dulu_yuk/js/curhat_dulu.js') }}"></script>
 </body>
 
 </html>

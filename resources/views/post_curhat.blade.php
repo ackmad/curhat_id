@@ -53,10 +53,10 @@
         <div class="hard"><div class="padd"></div></div>
         {{-- End - HardCover Belakang --}}
     </div>
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/turn.js') }}"></script>
-    <script>
-        $(".flipbook").turn();
-    </script>
+
+    <!-- script -->
+    <script src="{{ asset('post_curhat/js/jquery.js') }}"></script>
+    <script src="{{ asset('post_curhat/js/turn.js') }}"></script>
+    <script src="{{ assset('post_curhat/js/flip_book.js') }}"></script>
 </body>
 </html>

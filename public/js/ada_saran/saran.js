@@ -42,3 +42,28 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(url, '_blank');
     });
 });
+
+////
+
+document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.getElementById('alertSuccessClose');
+    const popup = document.getElementById('alertSuccessPopup');
+    const blur = document.getElementById('alertBlurOverlay');
+    if (closeBtn && popup && blur) {
+        closeBtn.onclick = function() {
+            popup.style.display = 'none';
+            blur.style.opacity = 0;
+            blur.style.pointerEvents = 'none';
+            setTimeout(() => blur.remove(), 400);
+        };
+    }
+    // Optional: auto close after 5s
+    setTimeout(() => {
+        if (popup && blur) {
+            popup.style.display = 'none';
+            blur.style.opacity = 0;
+            blur.style.pointerEvents = 'none';
+            setTimeout(() => blur.remove(), 400);
+        }
+    }, 5000);
+});
