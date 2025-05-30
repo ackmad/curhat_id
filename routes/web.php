@@ -5,6 +5,7 @@ use App\Http\Controllers\CurhatinController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\IntipCeritaController;
 use App\Http\Controllers\SaranController;
+use App\Http\Controllers\AdminDashboardController;
 
 // ====================
 // Halaman Utama
@@ -53,6 +54,9 @@ Route::get('/intip-cerita-orang', [IntipCeritaController::class, 'index'])->name
 
 // Detail cerita berdasarkan ID
 Route::get('/cerita/{id}', [StoriesController::class, 'show'])->name('cerita.show');
+
+// Tambahkan ini untuk hapus cerita
+Route::delete('/cerita/{id}', [StoriesController::class, 'destroy'])->name('cerita.destroy');
 
 // ====================
 // AJAX Search Cerita
@@ -113,3 +117,6 @@ Route::get('login4', function () {
 Route::get('login5', function () {
     return view('admin.login5');
 });
+
+// Halaman dashboard admin
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
