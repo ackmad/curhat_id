@@ -78,4 +78,12 @@ class StoriesController extends Controller
 
         return view('post_curhat', compact('story'));
     }
+
+    public function destroy($id)
+    {
+        $story = Stories::findOrFail($id);
+        $story->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Curhatan berhasil dihapus.');
+    }
 }
