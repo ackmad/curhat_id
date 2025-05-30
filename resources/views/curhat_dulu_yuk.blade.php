@@ -43,9 +43,10 @@
                 closeBtn.onclick = closePopup;
                 blur.onclick = closePopup;
             }
-            setTimeout(closePopup, 5000);
+            setTimeout(closePopup, 50000);
         });
         </script>
+        <script src="{{ asset('js/curhat_dulu_yuk/curhat_dulu.js') }}"></script>
     @endif
 
     <div class="main-container" style="padding-top:90px;">
@@ -181,8 +182,8 @@
     </div>
 
      <!-- script -->
-    <script src="{{ asset('curhat_dulu_yuk/js/typing-papper.js') }}"></script>
-    <script src="{{ asset('curhat_dulu_yuk/js/curhat_dulu.js') }}"></script>
+    <script src="{{ asset('js/curhat_dulu_yuk/typing-papper.js') }}"></script>
+    <script src="{{ asset('js/curhat_dulu_yuk/curhat_dulu.js') }}"></script>
 </body>
 
 </html>

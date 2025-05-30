@@ -67,6 +67,6 @@
     </div>
 
      <!-- script -->
-    <script src="{{ asset('kenalin_kami/js/kenalin.js') }}"></script>
+    <script src="{{ asset('js/kenalin_kami/kenalin.js') }}"></script>
 </body>
 </html>

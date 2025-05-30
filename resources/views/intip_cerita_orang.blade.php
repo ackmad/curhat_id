@@ -15,7 +15,9 @@
     <div class="container">
         <div class="search-bar">
             <h3>Intip Cerita Orang yukk...</h3>
-            <form id="searchForm" style="display:flex;gap:10px;flex-wrap:wrap;">
+            <form id="searchForm"
+                  data-ajax-url="{{ route('ajax.search.cerita') }}"
+                  style="display:flex;gap:10px;flex-wrap:wrap;">
                 <input type="text" name="q" id="searchInput" value="{{ request('q') }}" placeholder="Cari sesuka hatimu">
                 <select name="by" id="searchBy">
                     <option value="">cari berdasarkan</option>
@@ -37,7 +39,7 @@
     </div>
 
      <!-- script -->
-    <script src="{{ asset('intip_cerita_orang/js/intip_cerita.js') }}"></script>
+    <script src="{{ asset('js/intip_cerita_orang/intip_cerita.js') }}"></script>
 </body>
 
 </html>

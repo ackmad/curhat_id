@@ -59,5 +59,5 @@
 </body>
 
  <!-- script -->
-<script src="{{ asset('ada_saran/js/saran.js') }}"></script>
+<script src="{{ asset('js/ada_saran/saran.js') }}"></script>
 </html>

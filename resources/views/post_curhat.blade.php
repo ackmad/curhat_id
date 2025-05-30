@@ -55,8 +55,10 @@
     </div>
 
     <!-- script -->
-    <script src="{{ asset('post_curhat/js/jquery.js') }}"></script>
-    <script src="{{ asset('post_curhat/js/turn.js') }}"></script>
-    <script src="{{ assset('post_curhat/js/flip_book.js') }}"></script>
+    <script src="{{ asset('js/post_curhat/jquery.js') }}"></script>
+    <script src="{{ asset('js/post_curhat/turn.js') }}"></script>
+    <script>
+        $(".flipbook").turn();
+    </script>
 </body>
 </html>

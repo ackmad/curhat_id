@@ -48,6 +48,9 @@
     </footer>
 
      <!-- script -->
-    <script src="{{ asset('beranda/js/beranda.js') }}"></script>
+    <script>
+        window.allStories = @json($stories);
+    </script>
+    <script src="{{ asset('js/beranda/beranda.js') }}"></script>
 </body>
 </html>

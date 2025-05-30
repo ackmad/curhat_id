@@ -1,2 +1,0 @@
-
-$(".flipbook").turn();
