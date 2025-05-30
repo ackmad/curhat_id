@@ -43,7 +43,7 @@
                 closeBtn.onclick = closePopup;
                 blur.onclick = closePopup;
             }
-            setTimeout(closePopup, 50000);
+            setTimeout(closePopup, 5000);
         });
         </script>
     @endif
@@ -179,8 +179,10 @@
             </form>
         </div>
     </div>
-    <script src="{{ asset('js/typing-papper.js') }}"></script>
 
+     <!-- script -->
+    <script src="{{ asset('curhat_dulu_yuk/js/typing-papper.js') }}"></script>
+    <script src="{{ asset('curhat_dulu_yuk/js/curhat_dulu.js') }}"></script>
 </body>
 
 </html>

@@ -46,48 +46,8 @@
         <p class="footer-description">Curhat.id dibangun dari keresahan—iya, keresahan yang seringnya nggak bisa kita ucapin di dunia nyata. Tapi tenang, di sini kamu bebas. Mau cerita panjang, pendek, acak-acakan, atau typo segudang, kita baca satu per satu (dan diem-diem baper juga kadang 🥹).</p>
         <h5 class="footer-copyright">© 2025 Curhat.id | Made with Kopi, Coding, dan PLaylist malam hari.</h5>
     </footer>
-    <script>
-    window.allStories = @json($stories);
 
-    function renderStories(kategori = null) {
-        const container = document.getElementById('post-container');
-        let stories = window.allStories;
-        if (kategori) {
-            stories = stories.filter(s => s.kategori === kategori);
-        }
-        let html = '';
-        if (stories.length === 0) {
-            html = '<p>Tidak ada cerita untuk kategori ini.</p>';
-        } else {
-            stories.slice(0, 10).forEach(story => {
-                html += `
-                    <a href="/cerita/${story.id}" class="post-card">
-                        <p class="post-date">${story.created_at ? story.created_at.substring(2,10).replace(/-/g,'.') : ''}</p>
-                        <div class="post-content">
-                            <h3 class="post-title">${story.judul}</h3>
-                            <p class="post-description">${story.isi.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}</p>
-                        </div>
-                        <p class="post-category">${story.kategori ?? '-'}</p>
-                    </a>
-                `;
-            });
-        }
-        container.innerHTML = html;
-    }
-
-    document.querySelectorAll('.btn-category').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelectorAll('.btn-category').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const kategori = this.dataset.kategori;
-            renderStories(kategori);
-            document.getElementById('post-container').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    // Render all stories on first load
-    renderStories();
-    </script>
+     <!-- script -->
+    <script src="{{ asset('beranda/js/beranda.js') }}"></script>
 </body>
 </html>

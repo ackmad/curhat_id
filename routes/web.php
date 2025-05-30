@@ -81,3 +81,35 @@ Route::get('/elfan', function () {
 Route::get('/aldi', function () {
     return view('aldi');
 });
+
+
+
+// ====================
+// Halaman Admin
+// ====================
+
+
+// Login 1
+Route::get('login1', function () {
+    return view('admin.login1');
+});
+
+// Login 2
+Route::get('login2', function () {
+    return view('admin.login2');
+});
+
+// Login 3
+Route::get('login3', function () {
+    return view('admin.login3');
+});
+
+// Login 4
+Route::get('login4', function () {
+    return view('admin.login4');
+});
+
+// Login 5
+Route::get('login5', function () {
+    return view('admin.login5');
+});
