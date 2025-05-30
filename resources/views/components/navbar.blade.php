@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dropbtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (dropdown.style.display === 'block') {
-            dropdown.style.transform = 'translateX(-100%)';
+            dropdown.style.transform = 'translateX(-500%)';
             setTimeout(() => { dropdown.style.display = 'none'; }, 500);
         } else {
             dropdown.style.display = 'block';
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('click', function(event) {
         if (!dropdown.contains(event.target) && !dropbtn.contains(event.target)) {
-            dropdown.style.transform = 'translateX(-100%)';
+            dropdown.style.transform = 'translateX(-500%)';
             setTimeout(() => { dropdown.style.display = 'none'; }, 500);
         }
     });

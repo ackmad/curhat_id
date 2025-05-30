@@ -43,7 +43,7 @@
                 closeBtn.onclick = closePopup;
                 blur.onclick = closePopup;
             }
-            setTimeout(closePopup, 5000);
+            setTimeout(closePopup, 50000);
         });
         </script>
     @endif

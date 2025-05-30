@@ -12,7 +12,7 @@ let pages = [];
 let currentPage = 0;
 
 // Fungsi membagi isi ke halaman berdasarkan tinggi
-function splitToPagesByHeight(text, maxHeightPx = 500) {
+function splitToPagesByHeight(text, maxHeightPx = 900) {
     // Pisahkan berdasarkan baris kosong (paragraf)
     const paragraphs = text.split(/\n+/).map(p => p.trim()).filter(Boolean);
     let pages = [];

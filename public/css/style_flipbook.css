@@ -139,3 +139,69 @@ body {
 }
 .animate-pop {
 }
+
+/* Responsive Mobile Styles */
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+        width: 100vw;
+        overflow: auto;
+        background: #C6DEBF;
+        padding: 0;
+    }
+
+    .flipbook {
+        width: 98vw !important;
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        height: 80dvh !important;
+        max-height: 90dvh !important;
+        min-height: 0 !important;
+        margin: 0 auto;
+        box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .flipbook .hard,
+    .flipbook .page {
+        border-radius: 14px !important;
+        font-size: 0.98rem;
+        padding: 0 !important;
+    }
+
+    .cover-content {
+        padding: 18px 8px 14px 8px !important;
+    }
+
+    .judul-curhat {
+        font-size: 1.2rem !important;
+    }
+
+    .cover-divider {
+        margin: 8px 0 10px 0;
+    }
+
+    .cover-subtitle {
+        font-size: 0.95rem !important;
+        padding: 4px 10px;
+    }
+
+    .emoji-cover {
+        font-size: 2rem !important;
+        margin-bottom: 8px;
+    }
+
+    .tanggal-curhat {
+        font-size: 0.95rem !important;
+        margin-bottom: 10px;
+    }
+
+    .padd {
+        padding: 10px !important;
+    }
+}

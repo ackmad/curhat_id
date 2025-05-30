@@ -501,17 +501,16 @@ body.modal-open > *:not(#success-modal) {
         padding: 0 5%;
     }
     #story-title {
-        font-size: 14px;
-        margin-top: 4%;
+
         width: 80%;
-        margin-left: 10%;
+        margin-left: 20%;
     }
     #story-pages {
         font-size: 12px;
         min-height: 60px;
-        max-height: 100px;
+        max-height: 900px;
         width: 80%;
-        margin-left: 10%;
+        margin-left: 15%;
     }
     .story-paper {
         min-height: 180px;
