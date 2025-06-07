@@ -26,7 +26,7 @@ class AdminDashboardController extends Controller
 
         if ($selectedPeriod == 'month') {
             $storiesQuery->whereMonth('created_at', now()->month)
-                         ->whereYear('created_at', now()->year);
+                ->whereYear('created_at', now()->year);
         }
 
         // Ambil stories dengan jumlah view
@@ -50,4 +50,5 @@ class AdminDashboardController extends Controller
             'selectedPeriod' => $selectedPeriod,
         ]);
     }
+    
 }

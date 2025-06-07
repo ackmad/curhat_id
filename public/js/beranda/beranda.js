@@ -1,4 +1,5 @@
 
+
 function renderStories(kategori = null) {
     const container = document.getElementById('post-container');
     let stories = window.allStories;

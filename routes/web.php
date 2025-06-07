@@ -6,6 +6,7 @@ use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\IntipCeritaController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminAuthController;
 
 // ====================
 // Halaman Utama
@@ -93,30 +94,6 @@ Route::get('/aldi', function () {
 // ====================
 
 
-// Login 1
-Route::get('login1', function () {
-    return view('admin.login1');
-});
+// Halaman login admin
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
-// Login 2
-Route::get('login2', function () {
-    return view('admin.login2');
-});
-
-// Login 3
-Route::get('login3', function () {
-    return view('admin.login3');
-});
-
-// Login 4
-Route::get('login4', function () {
-    return view('admin.login4');
-});
-
-// Login 5
-Route::get('login5', function () {
-    return view('admin.login5');
-});
-
-// Halaman dashboard admin
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
