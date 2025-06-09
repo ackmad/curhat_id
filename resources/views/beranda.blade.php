@@ -44,7 +44,7 @@
     <footer class="footer">
         <h3 class="footer-heading">Kita semua pernah ngerasa sendirian, ngerasa nggak didengerin, atau sekadar pengen cerita tanpa takut dihakimi. Di sinilah Curhat.id berdiri — bukan buat sok tau, tapi buat nemenin kamu yang mungkin lagi bingung, sedih, jatuh cinta diam-diam, atau bahkan... gagal move on padahal udah berdoa tiap malam. 😌</h3>
         <p class="footer-description">Curhat.id dibangun dari keresahan—iya, keresahan yang seringnya nggak bisa kita ucapin di dunia nyata. Tapi tenang, di sini kamu bebas. Mau cerita panjang, pendek, acak-acakan, atau typo segudang, kita baca satu per satu (dan diem-diem baper juga kadang 🥹).</p>
-        <h5 class="footer-copyright">© 2025 Curhat.id | Made with Kopi, Coding, dan PLaylist malam hari.</h5>
+        <h5 class="footer-copyright">© 2025 Curhat.id | Diciptakan oleh Ackmad Elfan Purnam & Aldi Aziz Faihduracman</h5>
     </footer>
 
      <!-- script -->

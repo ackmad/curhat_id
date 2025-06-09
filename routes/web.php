@@ -88,7 +88,7 @@ Route::get('/elfan', function () {
 
 // Halaman statis aldi
 Route::get('/aldi', function () {
-    return view('aldi');
+    return view('aldi'); 
 });
 
 

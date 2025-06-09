@@ -25,16 +25,14 @@
                 <div class="cover-subtitle">{{ $story->kategori }}</div>
             </div>
         </div>
-        <div class="hard cover-shadow">
-            <div class="padd"></div>
-        </div>
+        <div class="hard cover-shadow"><div class="padd"></div></div>
         {{-- End - HardCover Depan --}}
 
         {{-- Isi otomatis dibagi halaman --}}
         @php
-            // Bagi isi per 130 kata
+            // Bagi isi per 130 katapa
             $words = preg_split('/\s+/', $story->isi);
-            $pages = array_map(function ($chunk) {
+            $pages = array_map(function($chunk) {
                 return implode(' ', $chunk);
             }, array_chunk($words, 130));
 
@@ -44,21 +42,17 @@
             }
         @endphp
 
-        @foreach ($pages as $page)
+        @foreach($pages as $page)
             <div>
                 <div class="padd">
-                    {!! nl2br(e($page)) !!}
+                    {!! $page !!}
                 </div>
             </div>
         @endforeach
 
         {{-- HardCover Belakang --}}
-        <div class="hard">
-            <div class="padd"></div>
-        </div>
-        <div class="hard">
-            <div class="padd"></div>
-        </div>
+        <div class="hard"><div class="padd"></div></div>
+        <div class="hard"><div class="padd"></div></div>
         {{-- End - HardCover Belakang --}}
     </div>
 
