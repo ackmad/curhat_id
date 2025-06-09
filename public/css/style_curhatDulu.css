@@ -530,4 +530,25 @@ body.modal-open > *:not(#success-modal) {
     .emoji-label {
         font-size: 28px;
     }
+    html, body {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    body {
+        /* pastikan tidak ada overflow hidden */
+        overflow-y: auto !important;
+    }
+    .main-container {
+        min-height: unset;
+        height: auto;
+        overflow: visible;
+        padding-bottom: 40px;
+    }
+    .story-section, .form-section {
+        min-height: unset;
+        height: auto;
+        overflow: visible;
+    }
 }

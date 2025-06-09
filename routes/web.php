@@ -56,8 +56,12 @@ Route::get('/intip-cerita-orang', [IntipCeritaController::class, 'index'])->name
 // Detail cerita berdasarkan ID
 Route::get('/cerita/{id}', [StoriesController::class, 'show'])->name('cerita.show');
 
+// Detail cerita berdasarkan ID
+Route::get('/cerita/{id}', [StoriesController::class, 'showStory'])->name('cerita.show');
+
 // Tambahkan ini untuk hapus cerita
 Route::delete('/cerita/{id}', [StoriesController::class, 'destroy'])->name('cerita.destroy');
+
 
 // ====================
 // AJAX Search Cerita

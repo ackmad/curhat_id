@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style_flipbook.css') }}">
     <x-favicon />
 </head>
+
 <body>
     <x-navbar />
     <div class="flipbook">
@@ -23,14 +25,16 @@
                 <div class="cover-subtitle">{{ $story->kategori }}</div>
             </div>
         </div>
-        <div class="hard cover-shadow"><div class="padd"></div></div>
+        <div class="hard cover-shadow">
+            <div class="padd"></div>
+        </div>
         {{-- End - HardCover Depan --}}
 
         {{-- Isi otomatis dibagi halaman --}}
         @php
-            // Bagi isi per 130 katapa
+            // Bagi isi per 130 kata
             $words = preg_split('/\s+/', $story->isi);
-            $pages = array_map(function($chunk) {
+            $pages = array_map(function ($chunk) {
                 return implode(' ', $chunk);
             }, array_chunk($words, 130));
 
@@ -40,25 +44,48 @@
             }
         @endphp
 
-        @foreach($pages as $page)
+        @foreach ($pages as $page)
             <div>
                 <div class="padd">
-                    {!! $page !!}
+                    {!! nl2br(e($page)) !!}
                 </div>
             </div>
         @endforeach
 
         {{-- HardCover Belakang --}}
-        <div class="hard"><div class="padd"></div></div>
-        <div class="hard"><div class="padd"></div></div>
+        <div class="hard">
+            <div class="padd"></div>
+        </div>
+        <div class="hard">
+            <div class="padd"></div>
+        </div>
         {{-- End - HardCover Belakang --}}
     </div>
 
+    {{-- Start - Mobile UI --}}
+    <div class="container">
+        <div class="header-info animate-scroll">
+            <h1 class="judul">{{ $story->judul }}</h1>
+            <div class="info">
+                <h4 class="tanggal">{{ $story->created_at->translatedFormat('l, d F Y • H:i') }}</h4>
+                <h4 class="kategori">{{ $story->kategori }}</h4>
+            </div>
+        </div>
+        <hr>
+        <div class="isi-curhat">
+            <!-- Tampilkan konten dengan format paragraf yang sudah diproses -->
+            {!! $paragrafWithIndent !!}
+        </div>
+    </div>
+    {{-- End - Mobile UI --}}
+
     <!-- script -->
     <script src="{{ asset('js/post_curhat/jquery.js') }}"></script>
+    <script src="{{ asset('js/post_curhat/scroll.js') }}"></script>
     <script src="{{ asset('js/post_curhat/turn.js') }}"></script>
     <script>
         $(".flipbook").turn();
     </script>
 </body>
+
 </html>
