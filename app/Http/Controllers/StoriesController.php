@@ -83,7 +83,18 @@ class StoriesController extends Controller
     {
         $story = Stories::findOrFail($id);
         $story->delete();
+        return response()->json(['success' => true]);
+    }
 
-        return redirect()->route('admin.dashboard')->with('success', 'Curhatan berhasil dihapus.');
+    public function ajaxShow($id)
+    {
+        $story = Stories::findOrFail($id);
+        return response()->json([
+            'judul' => $story->judul,
+            'kategori' => $story->kategori,
+            'tanggal' => $story->created_at->format('d M Y'),
+            'isi' => $story->isi,
+            'view' => $story->visits()->count(),
+        ]);
     }
 }

@@ -95,5 +95,16 @@ Route::get('/aldi', function () {
 
 
 // Halaman login admin
-Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+// Halaman Dahsboard Admin (hanya untuk admin login)
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/profile', [AdminDashboardController::class, 'profile'])->name('admin.profile');
+});
+
+// Endpoint AJAX untuk detail cerita (khusus admin, return JSON)
+Route::get('/admin/ajax-cerita/{id}', [StoriesController::class, 'ajaxShow'])->middleware('auth:admin');
 

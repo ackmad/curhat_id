@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Stories;
 use App\Models\Visits;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Controller;
 
 class AdminDashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function index(Request $request)
     {
         // Filter
@@ -41,6 +48,8 @@ class AdminDashboardController extends Controller
         // Akumulasi view
         $totalViews = Visits::count();
 
+        $admin = Auth::guard('admin')->user();
+
         return view('admin.dashboard', [
             'totalCurhatan' => $totalCurhatan,
             'totalViews' => $totalViews,
@@ -48,7 +57,13 @@ class AdminDashboardController extends Controller
             'stories' => $stories,
             'selectedCategory' => $selectedCategory,
             'selectedPeriod' => $selectedPeriod,
+            'admin' => $admin,
         ]);
     }
-    
+
+    public function profile()
+    {
+        $admin = Auth::guard('admin')->user();
+        return view('admin.profile', compact('admin'));
+    }
 }

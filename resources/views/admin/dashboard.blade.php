@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +48,7 @@
                     <a class="nav-link active" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="{{ route('admin.profile') }}">Profile</a>
                 </li>
             </ul>
         </nav>
@@ -122,12 +121,16 @@
                                         <td>{{ $story->created_at->format('d M Y') }}</td>
                                         <td>{{ $story->visits_count }}</td>
                                         <td>
-                                            <a href="{{ route('cerita.show', $story->id) }}" class="btn btn-sm btn-info" target="_blank">Lihat</a>
-                                            <form action="{{ route('cerita.destroy', $story->id) }}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus curhatan ini?')">Hapus</button>
-                                            </form>
+                                            <a href="#" 
+                                               class="btn btn-sm btn-info btn-view-story" 
+                                               data-id="{{ $story->id }}"
+                                            >Lihat</a>
+                                            <button 
+                                                class="btn btn-sm btn-danger btn-delete-story"
+                                                data-id="{{ $story->id }}"
+                                                data-title="{{ $story->judul }}"
+                                                type="button"
+                                            >Hapus</button>
                                         </td>
                                     </tr>
                                 @empty
@@ -143,5 +146,48 @@
         </main>
     </div>
 </div>
+
+<!-- Modal Konfirmasi Hapus -->
+<div id="deleteModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1050; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); align-items:center; justify-content:center;">
+    <div class="modal-dialog" style="max-width:400px; margin:auto;">
+        <div class="modal-content" style="border-radius:16px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalStoryTitle"></h5>
+            </div>
+            <div class="modal-body">
+                <p>Tolong konfirmasi stori yang ingin kamu hapus.</p>
+                <input type="text" class="form-control" id="confirmTitleInput" placeholder="Tulis ulang judul cerita">
+                <div id="deleteError" class="alert alert-danger mt-2 py-1 px-2" style="display:none; font-size:0.95em;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Batal</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<!-- Modal Detail Cerita -->
+<div id="detailModal" class="modal" tabindex="-1" style="display:none; position:fixed; z-index:1060; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); align-items:center; justify-content:center;">
+    <div class="modal-dialog" style="max-width:600px; margin:auto;">
+        <div class="modal-content" style="border-radius:16px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalTitle"></h5>
+                <button type="button" class="btn-close" id="closeDetailModalBtn"></button>
+            </div>
+            <div class="modal-body" id="detailModalBody">
+                <div class="text-center py-4">Memuat...</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal Detail Cerita -->
+
+<script>
+    window.csrfToken = '{{ csrf_token() }}';
+</script>
+<script src="{{ asset('js/dashboard/delete.js') }}"></script>
+<script src="{{ asset('js/dashboard/lihat.js') }}"></script>
 </body>
 </html>

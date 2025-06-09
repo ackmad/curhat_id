@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,7 +127,7 @@
 </head>
 <body>
   <div class="container">
-    <form class="form_main" action="" method="POST">
+    <form class="form_main" action="{{ route('admin.login.submit') }}" method="POST">
       @csrf
       <p class="heading">Login</p>
       <div class="inputContainer">
@@ -144,8 +143,8 @@
         <input placeholder="Password" id="password" name="password" class="inputField" type="password" aria-label="Password" required>
       </div>
       <button id="button" type="submit">Submit</button>
-      @if($errors->any())
-        <div style="color:red; font-size:0.9em;">{{ $errors->first() }}</div>
+      @if($errors->has('login'))
+        <div style="color:red; font-size:0.9em;">{{ $errors->first('login') }}</div>
       @endif
       <div class="signupContainer">
         <p>Don't have any account?</p>
