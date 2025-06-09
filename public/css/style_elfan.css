@@ -5,7 +5,6 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     background: #e3f6d6;
     color: #222;
-    overflow-y: hidden;
 }
 
 .container {
@@ -16,18 +15,13 @@ body {
     box-sizing: border-box;
     padding: 32px 24px;
     gap: 0;
-    overflow: hidden; /* ubah dari overflow-y: hidden ke overflow: hidden */
 }
 
 /* Left-side scrollable */
 #left-side {
-    flex: 1.2;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 32px 24px 32px 0;
-    overflow-y: auto;      /* ubah dari visible ke auto agar bisa scroll */
-    max-height: 100vh;     /* pastikan tingginya tidak melebihi viewport */
 }
 
 /* Right-side image sticky bottom, no scroll on right */
@@ -49,7 +43,7 @@ body {
     position: fixed;      /* Ubah ke fixed agar selalu nempel kanan bawah */
     right: 0;
     bottom: 0;
-    height: 80vh;        /* Selalu penuh tinggi layar */
+    height: 80vh;
     width: auto;
     max-width: none;
     border-radius: 0 0 80px 0;

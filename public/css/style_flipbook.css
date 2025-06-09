@@ -2,11 +2,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=McLaren&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+html {
+    scroll-behavior: smooth;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -14,12 +18,16 @@ body {
     place-content: center;
     height: 100vh;
     width: 100vw;
-	overflow: hidden;
-	background: #C6DEBF;
+    overflow: hidden;
+    background: #C6DEBF;
 }
 
-.padd{
+.padd {
     padding: 15px;
+}
+
+.container {
+    display: none;
 }
 
 .flipbook {
@@ -41,10 +49,10 @@ body {
 .flipbook .page {
     border-radius: 20px;
     background: white;
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     gap: 10px;
 }
 
@@ -117,91 +125,130 @@ body {
 
 /* Animasi */
 @keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-40px);}
-    100% { opacity: 1; transform: translateY(0);}
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(40px);}
-    100% { opacity: 1; transform: translateY(0);}
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeIn {
-    0% { opacity: 0;}
-    100% { opacity: 1;}
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Elemen muncul dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Elemen kembali ke posisi semula */
+    }
 }
+
+.fade-in {
+    opacity: 0; /* Mulai dengan opacity 0 */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Menambahkan kelas untuk delay progresif */
+.fade-in-delay {
+    animation-delay: var(--delay); /* Menggunakan variabel untuk delay */
+}
+
 @keyframes fadeInScale {
-    0% { opacity: 0; transform: scaleX(0.5);}
-    100% { opacity: 1; transform: scaleX(1);}
+    0% {
+        opacity: 0;
+        transform: scaleX(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
+
 @keyframes bounceIn {
-    0% { transform: scale(0.5);}
-    60% { transform: scale(1.2);}
-    100% { transform: scale(1);}
+    0% {
+        transform: scale(0.5);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
-.animate-pop {
-}
+
+.animate-pop {}
 
 /* Responsive Mobile Styles */
 @media (max-width: 600px) {
+
+    * {
+        font-family: 'McLaren', cursive;
+    }
+
     body {
+        background-color: #262626;
+        padding: 20% 5%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100dvh;
-        width: 100vw;
+        flex-direction: column;
+        justify-content: start;
         overflow: auto;
-        background: #C6DEBF;
-        padding: 0;
     }
 
     .flipbook {
-        width: 98vw !important;
-        max-width: 98vw !important;
-        min-width: 0 !important;
-        height: 80dvh !important;
-        max-height: 90dvh !important;
-        min-height: 0 !important;
-        margin: 0 auto;
-        box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
-        border-radius: 16px;
-        overflow: hidden;
-        position: relative;
+        display: none;
     }
 
-    .flipbook .hard,
-    .flipbook .page {
-        border-radius: 14px !important;
-        font-size: 0.98rem;
-        padding: 0 !important;
+    .container {
+        display: block;
     }
 
-    .cover-content {
-        padding: 18px 8px 14px 8px !important;
+    .header-info {
+        width: 100%;
+        background-color: #3F4C3F;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        color: #FFCA6C;
     }
 
-    .judul-curhat {
-        font-size: 1.2rem !important;
+    .isi-curhat {
+        font-size: 15px;
+        color: #FFFF;
     }
 
-    .cover-divider {
-        margin: 8px 0 10px 0;
-    }
-
-    .cover-subtitle {
-        font-size: 0.95rem !important;
-        padding: 4px 10px;
-    }
-
-    .emoji-cover {
-        font-size: 2rem !important;
-        margin-bottom: 8px;
-    }
-
-    .tanggal-curhat {
-        font-size: 0.95rem !important;
+    .p-curhat {
+        text-indent: 20px;
         margin-bottom: 10px;
+        text-align: justify;
     }
 
-    .padd {
-        padding: 10px !important;
+    hr {
+        margin: 10% 0;
+        border: 0;
+        height: 2px;
+        background: linear-gradient(to right, #FFCA6C, #C6DEBF);
+
     }
 }

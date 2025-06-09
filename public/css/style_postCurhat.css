@@ -64,3 +64,9 @@ body{
     text-align: justify;
     text-indent: 2em; /* Tambahkan ini untuk indentasi paragraf */
 }
+
+@media (max-width: 600px) {
+    .flipbook{
+        display: none;
+    }
+}

@@ -86,4 +86,25 @@ class StoriesController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Curhatan berhasil dihapus.');
     }
+public function showStory($id)
+{
+    $story = Stories::findOrFail($id);
+
+    // Menghapus tag HTML dan menambahkan enter setelah setiap <p>
+    $formattedStory = strip_tags($story->isi, '<p>'); // Menjaga tag <p> tetap
+    $formattedStory = nl2br($formattedStory); // Menambahkan line breaks jika perlu
+
+    // Membagi paragraf tanpa menambahkan index
+    $paragrafArray = explode('<p>', $formattedStory);
+    $paragrafWithIndent = '';
+
+    foreach ($paragrafArray as $paragraf) {
+        if ($paragraf) {
+            // Menambahkan indentasi pada setiap paragraf
+            $paragrafWithIndent .= '<p class="p-curhat animate-scroll">' . $paragraf . '</p>';
+        }
+    }
+
+    return view('post_curhat', compact('story', 'paragrafWithIndent'));
+}
 }

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (elfanImg) {
         elfanImg.style.cursor = 'pointer';
         elfanImg.addEventListener('click', function () {
-            window.location.href = "{{ url('/aldi') }}";
+            window.location.href = "/aldi";
         });
     }
 });
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (aldiImg) {
         aldiImg.style.cursor = 'pointer';
         aldiImg.addEventListener('click', function () {
-            window.location.href = "{{ url('/elfan') }}";
+            window.location.href = "/elfan";
         });
     }
 });

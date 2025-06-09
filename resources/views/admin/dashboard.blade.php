@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,33 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background: #f7f8fa; }
-        .sidebar {
-            background: #fff;
-            min-height: 100vh;
-            border-right: 1px solid #eee;
-        }
-        .sidebar .nav-link.active {
-            background: #f0f4ff;
-            color: #3f51b5;
-            font-weight: bold;
-        }
-        .stat-card {
-            border-radius: 18px;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(63,81,181,0.07);
-            padding: 24px 32px;
-            margin-bottom: 24px;
-        }
-        .stat-title { color: #888; font-size: 1rem; }
-        .stat-value { font-size: 2.2rem; font-weight: 700; color: #3f51b5; }
-        .table thead { background: #f0f4ff; }
-        .profile-img {
-            width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
-            border: 2px solid #3f51b5;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style_dashboard.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
@@ -49,12 +23,18 @@
                     <a class="nav-link active" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+
+                    {{-- <a class="nav-link" href="{{ route('admin.profile', ['hash' => request()->route('hash')]) }}">Profile</a> --}}
                 </li>
             </ul>
         </nav>
         <!-- Main Content -->
         <main class="col-md-10 ms-sm-auto px-md-5 py-4">
+            <h2 class="mb-4" style="font-family:'McLaren',cursive;font-weight:bold;color:#3F4C3F;">
+                <span style="background:linear-gradient(90deg,#C6DEBF 60%,#FFCA6C 100%);padding:8px 24px;border-radius:12px;">
+                    Dashboard Administrator
+                </span>
+            </h2>
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
                     <div class="stat-card text-center">
@@ -140,6 +120,9 @@
                     </div>
                 </div>
             </div>
+            <footer class="text-center mt-5" style="color:#3F4C3F;opacity:.7;font-size:1rem;">
+                © {{ date('Y') }} Curhat.id | Admin Dashboard
+            </footer>
         </main>
     </div>
 </div>
