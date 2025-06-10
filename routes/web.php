@@ -107,6 +107,7 @@ Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admi
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/profile', [AdminDashboardController::class, 'profile'])->name('admin.profile');
+    Route::get('/admin/saran', [AdminDashboardController::class, 'kotakSaran'])->name('admin.saran'); // <-- Tambahkan ini
 });
 
 // Endpoint AJAX untuk detail cerita (khusus admin, return JSON)

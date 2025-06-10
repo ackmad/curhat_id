@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Stories;
 use App\Models\Visits;
+use App\Models\Suggestions; // Tambahkan ini
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
 
@@ -65,5 +66,16 @@ class AdminDashboardController extends Controller
     {
         $admin = Auth::guard('admin')->user();
         return view('admin.profile', compact('admin'));
+    }
+
+    public function kotakSaran()
+    {
+        $admin = Auth::guard('admin')->user();
+        $saranList = Suggestions::orderByDesc('created_at')->get();
+
+        return view('admin.kotak_saran', [
+            'admin' => $admin,
+            'saranList' => $saranList,
+        ]);
     }
 }

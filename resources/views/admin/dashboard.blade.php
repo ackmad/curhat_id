@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.profile') }}">Profile</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.saran') }}">Kotak Saran</a>
+                </li>
             </ul>
         </nav>
         <!-- Main Content -->

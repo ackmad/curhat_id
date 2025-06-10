@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const elfanImg = document.querySelector('.img-elfan');
     if (elfanImg) {

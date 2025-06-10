@@ -15,8 +15,7 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('admins')->insert(
-        [
+        DB::table('admins')->insert([
             'nama' => 'Ackmad Elfan Purnam',
             'username' => 'fanfann2215',
             'password' => Hash::make('elfanp_1123'), // Pastikan password terenkripsi
@@ -27,7 +26,9 @@ class AdminSeeder extends Seeder
             'alamat' => 'Perumahan Bima',
             'created_at' => now(),
             'updated_at' => now(),
-        ],
+        ]);
+
+        DB::table('admins')->insert([
         [
             'nama' => 'Aldi Aziz Faidlurrahman',
             'username' => 'aldiazf',
@@ -40,7 +41,7 @@ class AdminSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ],
+        ]);
 
-    );
     }
 }
